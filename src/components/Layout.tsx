@@ -40,7 +40,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center px-8 py-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/src/assets/logo.png" alt="MVIZ Technologies" className="h-12 w-auto group-hover:opacity-80 transition-opacity" />
+            <img src="/assets/logo.png" alt="MVIZ Technologies" className="h-12 w-auto group-hover:opacity-80 transition-opacity" />
           </Link>
 
           {/* Desktop Nav */}
