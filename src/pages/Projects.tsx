@@ -5,7 +5,7 @@ const projects = [
   {
     title: "LogiTrack AI",
     category: "Logistics",
-    image: "/src/assets/logitrack.png",
+    image: "/assets/logitrack.png",
     desc: "An AI-powered logistics platform that optimizes route efficiency and predicts supply chain disruptions using real-time data.",
     tech: ["Python", "TensorFlow", "React", "AWS"],
     results: ["35% reduction in fuel costs", "99.9% uptime", "Real-time tracking for 10k+ vehicles"]
@@ -13,7 +13,7 @@ const projects = [
   {
     title: "FinFlow Mobile",
     category: "FinTech",
-    image: "/src/assets/finflow.png",
+    image: "/assets/finflow.png",
     desc: "A secure, high-performance mobile banking application designed for the next generation of digital-native users.",
     tech: ["React Native", "Node.js", "PostgreSQL", "Azure"],
     results: ["1M+ active users", "4.9/5 App Store rating", "Zero security breaches since launch"]
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "HealthPulse Dashboard",
     category: "Healthcare",
-    image: "/src/assets/healthdashboard.png",
+    image: "/assets/healthdashboard.png",
     desc: "A comprehensive data analytics dashboard for hospitals to monitor patient vitals and predict potential health risks.",
     tech: ["Next.js", "D3.js", "Python", "Google Cloud"],
     results: ["20% improvement in patient outcomes", "Automated reporting saved 15hrs/week", "HIPAA compliant architecture"]
@@ -29,7 +29,7 @@ const projects = [
   {
     title: "EcoShop Global",
     category: "E-commerce",
-    image: "/src/assets/ecoshop.png",
+    image: "/assets/ecoshop.png",
     desc: "A headless e-commerce platform built for a global sustainable fashion brand, focusing on speed and conversion.",
     tech: ["Next.js", "Shopify Plus", "GraphQL", "Vercel"],
     results: ["45% increase in conversion rate", "Sub-second page load times", "Seamless multi-currency support"]

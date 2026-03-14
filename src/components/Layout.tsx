@@ -120,7 +120,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 relative z-10">
         <div className="col-span-1 lg:col-span-1">
           <Link to="/" className="inline-block mb-10 group">
-            <img src="/src/assets/logo.png" alt="MVIZ Technologies" className="h-32 w-auto group-hover:opacity-80 transition-opacity" />
+            <img src="/assets/logo.png" alt="MVIZ Technologies" className="h-32 w-auto group-hover:opacity-80 transition-opacity" />
           </Link>
           <p className="text-slate-400 mb-10 leading-relaxed text-base font-light max-w-xs">
             Engineering intelligent digital solutions for the world's most innovative companies. We turn complex ideas into seamless digital experiences.
@@ -189,7 +189,7 @@ const Footer = () => {
           </div>
           
           <div className="relative z-10 mb-8">
-            <img src="/src/assets/logo.png" alt="MVIZ Technologies" className="h-28 w-auto" />
+            <img src="/assets/logo.png" alt="MVIZ Technologies" className="h-28 w-auto" />
           </div>
 
           <div className="flex flex-col md:flex-row gap-10 text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 relative z-10">
