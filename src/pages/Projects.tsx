@@ -4,40 +4,42 @@ import { Link } from 'react-router-dom';
 
 const projects = [
   {
-    title: "LogiTrack AI",
-    category: "Logistics & Supply Chain",
-    image: "/assets/logitrack.png",
-    desc: "An enterprise-grade AI-powered logistics platform that revolutionizes route optimization, predictive maintenance, and supply chain visibility through real-time data analytics and machine learning algorithms.",
-    tech: ["Python", "TensorFlow", "React", "AWS", "IoT Sensors"],
+    title: "Raska Mon",
+    category: "Mental Health Platform",
+    image: "/assets/raskamon.png",
+    liveUrl: "https://raskamon.com/",
+    desc: "A comprehensive mental wellness platform connecting users with licensed therapists, providing personalized support and confidential care to help individuals take control of their mental health journey.",
+    tech: ["React", "Node.js", "PostgreSQL", "WebRTC", "HIPAA Compliance"],
     results: [
-      "35% reduction in fuel costs across fleet operations",
-      "99.9% system uptime with redundant architecture",
-      "Real-time tracking for 10,000+ vehicles nationwide",
-      "50% decrease in delivery delays through predictive routing"
+      "Connected thousands of users with licensed mental health professionals",
+      "Implemented secure video sessions with end-to-end encryption",
+      "Created personalized therapy matching algorithm",
+      "Achieved 95% user satisfaction rate with therapeutic outcomes"
     ],
     duration: "8 months",
     team: "12 engineers",
-    client: "Fortune 500 Logistics Company",
-    challenge: "Inefficient route planning and lack of real-time visibility causing delayed deliveries and increased fuel consumption.",
-    solution: "Implemented AI-driven route optimization with IoT-enabled fleet monitoring and predictive analytics dashboard."
+    client: "Raska Mon Mental Health",
+    challenge: "Need for accessible, confidential mental health support connecting users with qualified therapists while ensuring privacy and personalized care.",
+    solution: "Built secure teletherapy platform with therapist matching, encrypted video sessions, and personalized mental health tracking tools."
   },
   {
-    title: "FinFlow Mobile",
-    category: "FinTech & Banking",
-    image: "/assets/finflow.png",
-    desc: "A next-generation mobile banking platform built with military-grade security, offering seamless digital transactions, AI-powered financial insights, and biometric authentication for modern banking experiences.",
-    tech: ["React Native", "Node.js", "PostgreSQL", "Azure", "Blockchain"],
+    title: "Aerth Mobility",
+    category: "EV Service Platform",
+    image: "/assets/aerthmobility.png",
+    liveUrl: "https://aerthmobility.com/",
+    desc: "India's first integrated EV service & skill platform providing hyperlocal service network development, advanced technical expertise, and comprehensive EV parts aggregation for 2W & 3W electric vehicles.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Cloud APIs"],
     results: [
-      "1M+ active users within first 6 months of launch",
-      "4.9/5 App Store rating with 50,000+ reviews",
-      "Zero security breaches since 2022 launch",
-      "3x increase in mobile transaction volume"
+      "Built comprehensive EV service booking platform",
+      "Implemented technician tracking and management system",
+      "Created parts inventory management solution",
+      "Developed skill development and certification modules"
     ],
-    duration: "12 months",
-    team: "18 engineers",
-    client: "Leading National Bank",
-    challenge: "Legacy mobile app with poor UX, security vulnerabilities, and lack of modern features leading to customer churn.",
-    solution: "Complete platform rebuild with zero-trust architecture, biometric security, and AI-driven personalized banking insights."
+    duration: "9 months",
+    team: "14 engineers",
+    client: "Aerth Mobility Pvt Ltd",
+    challenge: "Fragmented EV service infrastructure and lack of skilled technicians hindering India's electric mobility transition.",
+    solution: "Developed integrated digital platform connecting service centers, technicians, parts suppliers, and customers to streamline EV ecosystem."
   },
   {
     title: "HealthPulse Dashboard",
@@ -112,12 +114,12 @@ export const Projects = () => {
             >
               {/* Image Section */}
               <div className={`relative group ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="relative z-10">
-                  <div className="aspect-[4/3] bg-slate-100 rounded-3xl overflow-hidden shadow-2xl relative">
+                <div className="relative z-10 space-y-6">
+                  <div className="aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-2xl relative">
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 bg-white"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                     />
@@ -125,13 +127,49 @@ export const Projects = () => {
                   </div>
                   
                   {/* Tech Stack Badges */}
-                  <div className="absolute -bottom-4 -right-4 md:-right-8 z-20 flex flex-wrap gap-2 max-w-[280px] justify-end">
+                  <div className="flex flex-wrap gap-2">
                     {project.tech.map((t, i) => (
                       <span key={i} className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-lg text-[10px] font-black uppercase tracking-wider text-primary shadow-lg border border-slate-100">
                         {t}
                       </span>
                     ))}
                   </div>
+
+                  {/* Business Impact */}
+                  <div className="bg-white rounded-2xl p-5 shadow-lg border border-slate-100 relative overflow-hidden">
+                    <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                      <Zap size={14} className="text-accent" />
+                      Key Results & Business Impact
+                    </h4>
+                    <ul className="space-y-2">
+                      {project.results.slice(0, 3).map((r, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium leading-relaxed">
+                          <ChevronRight size={12} className="text-accent shrink-0 mt-0.5" />
+                          {r}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA Link */}
+                  <Link 
+                    to="/contact" 
+                    className="inline-flex items-center gap-2 text-accent font-black text-sm uppercase tracking-wider hover:gap-3 transition-all"
+                  >
+                    Discuss Similar Project <ArrowUpRight size={18} />
+                  </Link>
+                  
+                  {/* View Live Site */}
+                  {project.liveUrl && (
+                    <a 
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 ml-4 text-primary font-black text-sm uppercase tracking-wider hover:text-accent transition-all"
+                    >
+                      View Live Site <ArrowUpRight size={18} />
+                    </a>
+                  )}
                 </div>
 
                 {/* Decorative Elements */}
@@ -182,33 +220,6 @@ export const Projects = () => {
                     <p className="text-sm text-slate-700 leading-relaxed">{project.solution}</p>
                   </div>
                 </div>
-                
-                {/* Business Impact */}
-                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-slate-100 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl -mr-16 -mt-16" />
-                  <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-                    <Zap size={14} className="text-accent" />
-                    Key Results & Business Impact
-                  </h4>
-                  <ul className="space-y-3 relative z-10">
-                    {project.results.map((r, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-slate-700 font-medium leading-relaxed">
-                        <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
-                          <ChevronRight size={12} className="text-accent" />
-                        </div>
-                        {r}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* CTA Link */}
-                <Link 
-                  to="/contact" 
-                  className="inline-flex items-center gap-2 mt-6 text-accent font-black text-sm uppercase tracking-wider hover:gap-3 transition-all"
-                >
-                  Discuss Similar Project <ArrowUpRight size={18} />
-                </Link>
               </div>
             </motion.div>
           ))}
