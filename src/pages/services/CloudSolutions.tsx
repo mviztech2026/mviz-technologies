@@ -47,6 +47,6 @@ export const CloudSolutions = () => (
       "Healthcare Systems"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/4149/4149691.png"
+    image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
   />
 );

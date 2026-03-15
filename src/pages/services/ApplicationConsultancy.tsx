@@ -83,6 +83,6 @@ export const ApplicationConsultancy = () => (
       "Technology Startups"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/15579/15579160.png"
+    image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
   />
 );

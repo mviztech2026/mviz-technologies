@@ -11,28 +11,35 @@ interface Solution {
 
 interface ServicePageProps {
   title: string;
-  overview: string;
+  overview: ReactNode;
   solutions: Solution[];
   partners: string[];
   industries: string[];
   image: string;
+  hideBackButton?: boolean;
 }
 
-export const ServiceTemplate = ({ title, overview, solutions, partners, industries, image }: ServicePageProps) => {
+export const ServiceTemplate = ({ title, overview, solutions, partners, industries, image, hideBackButton }: ServicePageProps) => {
   return (
     <div className="pb-20">
       <div className="relative w-full h-[40vh] mb-20">
-        <img src="https://media.istockphoto.com/id/1622423387/vector/abstract-technology-background-with-red-and-black-cubes.jpg?s=612x612&w=0&k=20&c=rQ82eBwREnx3mUoXzxHIv21DwUoCV8ZK-zUMySCj8h4=" alt={title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        <img src={image} alt={title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter">{title}</h1>
         </div>
       </div>
       <div className="section-padding">
-        <Link to="/services" className="flex items-center gap-2 text-accent font-black uppercase tracking-widest text-xs mb-10 hover:translate-x-2 transition-transform">
-          <ArrowLeft size={16} /> Back to Services
-        </Link>
+        {!hideBackButton && (
+          <Link to="/services" className="flex items-center gap-2 text-accent font-black uppercase tracking-widest text-xs mb-10 hover:translate-x-2 transition-transform">
+            <ArrowLeft size={16} /> Back to Services
+          </Link>
+        )}
         <div className="mb-20">
-          <p className="text-xl text-slate-600 leading-relaxed font-light">{overview}</p>
+          {typeof overview === 'string' ? (
+            <p className="text-xl text-slate-600 leading-relaxed font-light">{overview}</p>
+          ) : (
+            overview
+          )}
         </div>
         
         <h2 className="text-4xl font-black text-primary mb-12 tracking-tighter">Solutions Offered</h2>

@@ -82,6 +82,6 @@ export const OemSoftware = () => (
       "Government & Public Sector"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/10690/10690664.png"
+    image="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80"
   />
 );

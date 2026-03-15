@@ -39,6 +39,6 @@ export const ManagedItServices = () => (
       "Education"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/18643/18643269.png"
+    image="https://images.unsplash.com/photo-1560264280-88b68371db39?w=800&q=80"
   />
 );

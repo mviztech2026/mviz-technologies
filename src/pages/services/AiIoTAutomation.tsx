@@ -54,6 +54,6 @@ export const AiIoTAutomation = () => (
       "Industrial Automation"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/10398/10398522.png"
+    image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
   />
 );

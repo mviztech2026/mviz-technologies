@@ -74,6 +74,6 @@ export const Pps = () => (
       "Healthcare Institutions"
     ]}
 
-    image="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200&auto=format&fit=crop"
+    image="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80"
   />
 );

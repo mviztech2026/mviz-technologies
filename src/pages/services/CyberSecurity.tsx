@@ -68,6 +68,6 @@ export const CyberSecurity = () => (
       "Cisco", "Checkpoint", "Fortigate", "Sophos", "Quickheal", "McAfee", "F-Secure"
     ]}
     industries={["Banking & Finance", "Healthcare", "Government Agencies", "IT Infrastructure"]}
-    image="https://cdn-icons-png.flaticon.com/128/8722/8722568.png"
+    image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
   />
 );

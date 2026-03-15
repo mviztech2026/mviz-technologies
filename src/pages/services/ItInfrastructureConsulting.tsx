@@ -39,6 +39,6 @@ export const ItInfrastructureConsulting = () => (
       "Education"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/19014/19014236.png"
+    image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
   />
 );

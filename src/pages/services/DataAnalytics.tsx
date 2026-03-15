@@ -39,6 +39,6 @@ export const DataAnalytics = () => (
       "Manufacturing"
     ]}
 
-    image="https://cdn-icons-png.flaticon.com/128/17904/17904741.png"
+    image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
   />
 );

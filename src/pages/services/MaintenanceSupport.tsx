@@ -63,6 +63,6 @@ export const MaintenanceSupport = () => (
       "Financial Institutions"
     ]}
 
-    image="https://images.unsplash.com/photo-1581092921461-39b4d8c8b1b4?q=80&w=1200&auto=format&fit=crop"
+    image="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
   />
 );

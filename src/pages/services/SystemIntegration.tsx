@@ -106,6 +106,6 @@ export const SystemIntegration = () => (
       "Enterprise Infrastructure"
     ]}
 
-    image="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=1200&auto=format&fit=crop"
+    image="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
   />
 );
