@@ -9,21 +9,78 @@ interface FAQItem {
 }
 
 const solutions = [
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/1828/1828476.png" alt="Access Control" className="w-10 h-10" />, title: "Access Control Systems", desc: "Advanced access control systems that regulate and monitor entry points across enterprise facilities." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2964/2964514.png" alt="CCTV" className="w-10 h-10" />, title: "CCTV Surveillance", desc: "High-definition surveillance solutions for continuous monitoring and improved security management." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2519/2519116.png" alt="Rodent Control" className="w-10 h-10" />, title: "Rodent Control Systems", desc: "Infrastructure solutions to prevent and manage rodent-related risks within buildings and facilities." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2328/2328966.png" alt="Water Leak" className="w-10 h-10" />, title: "Water Leak Detection (WLD)", desc: "Early leak detection systems designed to protect critical infrastructure and data center environments." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/8061/8061840.png" alt="Smoke Detection" className="w-10 h-10" />, title: "VESDA Smoke Detection", desc: "Very Early Smoke Detection Apparatus systems providing advanced fire safety monitoring." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2554/2554949.png" alt="Parking" className="w-10 h-10" />, title: "Parking Access Control (PAC/CAC)", desc: "Smart parking management systems controlling vehicle access and monitoring parking facilities." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/702/702814.png" alt="Electrical" className="w-10 h-10" />, title: "Electrical Panels & Power Controls", desc: "Reliable electrical panel infrastructure for efficient power distribution and system control." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2956/2956381.png" alt="UPS" className="w-10 h-10" />, title: "UPS, DG & Power Backup", desc: "Uninterruptible power supply systems, diesel generators, and backup infrastructure for critical operations." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/7855/7855898.png" alt="Fire Suppression" className="w-10 h-10" />, title: "Gas Suppression Systems", desc: "Advanced fire suppression technologies using gas-based systems to protect sensitive environments." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/8061/8061840.png" alt="Fire Alarm" className="w-10 h-10" />, title: "Fire Detection & Alarm (FDA)", desc: "Comprehensive fire detection and alarm infrastructure ensuring quick emergency response." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2906/2906274.png" alt="Networking" className="w-10 h-10" />, title: "Passive & Active Networking", desc: "Complete networking infrastructure including structured cabling and active network devices." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/1835/1835949.png" alt="Flooring" className="w-10 h-10" />, title: "False Flooring Infrastructure", desc: "Specialized flooring solutions designed to support data center and infrastructure cabling systems." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2933/2933245.png" alt="Server Rack" className="w-10 h-10" />, title: "Server Rack & Data Centre Infrastructure", desc: "Enterprise-grade server racks and data center infrastructure solutions." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2942/2942074.png" alt="Civil Work" className="w-10 h-10" />, title: "Civil Work for IT Infrastructure", desc: "Civil construction and facility preparation for implementing enterprise IT infrastructure." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png" alt="Building" className="w-10 h-10" />, title: "Building Management & Automation", desc: "Integrated building automation systems managing HVAC, temperature control, power, and water systems." },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/1828/1828476.png" alt="Access Control" className="w-10 h-10" />, 
+    title: "Access Control Systems", 
+    desc: "Advanced access control systems that regulate and monitor entry points across enterprise facilities.",
+    bullets: [
+      "Biometric authentication systems",
+      "Smart card & RFID solutions",
+      "Turnstile integration",
+      "Visitor management systems",
+      "Time & attendance tracking"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2964/2964514.png" alt="CCTV" className="w-10 h-10" />, 
+    title: "CCTV Surveillance", 
+    desc: "High-definition surveillance solutions for continuous monitoring and security management.",
+    bullets: [
+      "IP camera installation",
+      "Network video recorders",
+      "Remote monitoring setup",
+      "Video analytics integration",
+      "Centralized command center"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/8061/8061840.png" alt="Smoke Detection" className="w-10 h-10" />, 
+    title: "VESDA Smoke Detection", 
+    desc: "Very Early Smoke Detection Apparatus for advanced fire safety monitoring.",
+    bullets: [
+      "Air sampling systems",
+      "Early warning detection",
+      "Multi-level monitoring",
+      "Integration with BMS",
+      "Maintenance & testing"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/7855/7855898.png" alt="Fire Suppression" className="w-10 h-10" />, 
+    title: "Gas Suppression Systems", 
+    desc: "Advanced fire suppression using gas-based systems for sensitive environments.",
+    bullets: [
+      "FM-200 & Novec systems",
+      "Clean agent suppression",
+      "Server room protection",
+      "Automatic activation",
+      "Safety compliance certified"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2956/2956381.png" alt="UPS" className="w-10 h-10" />, 
+    title: "UPS & Power Backup", 
+    desc: "Uninterruptible power supply systems and backup infrastructure for critical operations.",
+    bullets: [
+      "Online UPS systems",
+      "Diesel generator sets",
+      "Battery backup solutions",
+      "Power distribution units",
+      "Load management systems"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2933/2933245.png" alt="Data Center" className="w-10 h-10" />, 
+    title: "Data Centre Infrastructure", 
+    desc: "Enterprise-grade server racks and data center infrastructure solutions.",
+    bullets: [
+      "Server rack installation",
+      "Cable management systems",
+      "Raised flooring solutions",
+      "Precision cooling systems",
+      "Environmental monitoring"
+    ]
+  },
 ];
 
 const partners = [
@@ -153,15 +210,25 @@ export const ElvIbms = () => {
               
               {/* Content */}
               <div className="relative p-5 md:p-8">
-                <div className="flex items-start gap-3 md:gap-4">
+                <div className="flex items-start gap-3 md:gap-4 mb-4">
                   <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <div className="w-6 h-6 md:w-10 md:h-10">{s.icon}</div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-sm md:text-lg font-bold text-primary mb-1 md:mb-2 leading-tight">{s.title}</h4>
-                    <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{s.desc}</p>
+                    <h4 className="text-base md:text-xl font-bold text-primary mb-1 md:mb-2 leading-tight">{s.title}</h4>
+                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
+                
+                {/* Bullet Points */}
+                <ul className="mt-4 space-y-1.5 border-t border-slate-100 pt-4">
+                  {s.bullets.map((bullet, bi) => (
+                    <li key={bi} className="flex items-start gap-2 text-sm text-slate-600">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></span>
+                      <span className="leading-relaxed">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
               
               {/* Bottom gradient line */}

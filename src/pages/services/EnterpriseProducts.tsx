@@ -9,19 +9,78 @@ interface FAQItem {
 }
 
 const solutions = [
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2933/2933245.png" alt="Servers" className="w-10 h-10" />, title: "Servers (Rack, Tower & Blade)", desc: "Powerful and reliable enterprise servers designed to support business-critical workloads, virtualization, and large-scale computing environments." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2906/2906274.png" alt="Storage" className="w-10 h-10" />, title: "Storage / NAS Solutions", desc: "Secure and scalable storage infrastructure enabling efficient data management, backup, and high availability across enterprise environments." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2915/2915839.png" alt="Wireless" className="w-10 h-10" />, title: "Wireless AP & Controllers", desc: "Enterprise wireless networking solutions with centralized control to deliver seamless connectivity and reliable performance." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2910/2910791.png" alt="Routers" className="w-10 h-10" />, title: "Enterprise Routers", desc: "High-performance routing infrastructure ensuring efficient network traffic management and secure connectivity across enterprise networks." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2906/2906274.png" alt="Switches" className="w-10 h-10" />, title: "Switches (Core, L3, L2, Distribution)", desc: "Versatile enterprise switching solutions that enable scalable network architecture and efficient data transmission." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/3043/3043886.png" alt="SAN Switch" className="w-10 h-10" />, title: "SAN Switch", desc: "Fiber Channel switching infrastructure designed to optimize storage area networks and ensure high-speed data access." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2964/2964514.png" alt="Video Conference" className="w-10 h-10" />, title: "Video Conferencing Systems", desc: "Modern enterprise video conferencing solutions enabling real-time collaboration across distributed teams." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/3659/3659898.png" alt="IP Phone" className="w-10 h-10" />, title: "IPBX & IP Phone Systems", desc: "Enterprise communication platforms with IP telephony solutions to improve connectivity and productivity." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/3043/3043886.png" alt="HPC" className="w-10 h-10" />, title: "HPC & HCI Systems", desc: "High-performance computing and hyper-converged infrastructure solutions designed for complex workloads and large-scale data processing." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2906/2906274.png" alt="Engineered" className="w-10 h-10" />, title: "Engineered Systems", desc: "Integrated enterprise platforms engineered for specific workloads, optimized performance, and operational efficiency." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/3063/3063822.png" alt="Cloud" className="w-10 h-10" />, title: "Cloud Machines", desc: "Flexible and scalable cloud infrastructure solutions supporting enterprise applications, workloads, and digital transformation initiatives." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/3063/3063198.png" alt="Biometric" className="w-10 h-10" />, title: "Biometric Attendance Systems", desc: "Secure biometric authentication systems designed for workforce attendance management and identity verification." },
-  { icon: <img src="https://cdn-icons-png.flaticon.com/128/2964/2964514.png" alt="Video Wall" className="w-10 h-10" />, title: "Video Wall & Display Solutions", desc: "Large-scale display technologies and video wall systems designed for monitoring centers, command centers, and enterprise visual communication." },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2933/2933245.png" alt="Servers" className="w-10 h-10" />, 
+    title: "Enterprise Servers", 
+    desc: "Rack, tower & blade servers for business-critical workloads.",
+    bullets: [
+      "HPE ProLiant series",
+      "Dell PowerEdge servers",
+      "Cisco UCS platforms",
+      "Virtualization ready",
+      "Redundant power options"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2906/2906274.png" alt="Storage" className="w-10 h-10" />, 
+    title: "Storage Solutions", 
+    desc: "NAS, SAN & enterprise storage infrastructure.",
+    bullets: [
+      "NetApp storage arrays",
+      "Dell EMC solutions",
+      "HPE 3PAR storage",
+      "All-flash options",
+      "Data deduplication"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2915/2915839.png" alt="Wireless" className="w-10 h-10" />, 
+    title: "Wireless Networking", 
+    desc: "Enterprise WiFi solutions with centralized management.",
+    bullets: [
+      "Aruba wireless access points",
+      "Cisco Meraki solutions",
+      "Wireless controllers",
+      "Guest access portals",
+      "WiFi 6 ready"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2910/2910791.png" alt="Routers" className="w-10 h-10" />, 
+    title: "Enterprise Routers", 
+    desc: "High-performance routing infrastructure.",
+    bullets: [
+      "Cisco ISR routers",
+      "Juniper MX series",
+      "SD-WAN solutions",
+      "MPLS support",
+      "High availability"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2906/2906274.png" alt="Switches" className="w-10 h-10" />, 
+    title: "Enterprise Switches", 
+    desc: "Core, distribution & access layer switches.",
+    bullets: [
+      "Cisco Catalyst switches",
+      "Aruba CX series",
+      "PoE+ support",
+      "10G/40G/100G options",
+      "Stackable configurations"
+    ]
+  },
+  { 
+    icon: <img src="https://cdn-icons-png.flaticon.com/128/2964/2964514.png" alt="Video" className="w-10 h-10" />, 
+    title: "Collaboration Tools", 
+    desc: "Video conferencing & communication systems.",
+    bullets: [
+      "Poly video solutions",
+      "Cisco Webex devices",
+      "Zoom Room systems",
+      "IP phone systems",
+      "Conference room setup"
+    ]
+  },
 ];
 
 const partners = [
@@ -153,15 +212,25 @@ export const EnterpriseProducts = () => {
               
               {/* Content */}
               <div className="relative p-8">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 mb-4">
                   <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     {s.icon}
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-bold text-primary mb-2 leading-tight">{s.title}</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{s.desc}</p>
+                    <h4 className="text-xl font-bold text-primary mb-2 leading-tight">{s.title}</h4>
+                    <p className="text-slate-600 text-base leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
+                
+                {/* Bullet Points */}
+                <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
+                  {s.bullets.map((bullet, bi) => (
+                    <li key={bi} className="flex items-start gap-2 text-sm text-slate-600">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></span>
+                      <span className="leading-relaxed">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
               
               {/* Bottom gradient line */}

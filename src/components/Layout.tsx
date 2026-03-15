@@ -204,10 +204,7 @@ const Footer = () => {
             <span className="text-[15rem] md:text-[30rem] font-black tracking-tighter leading-none block">MVIZ</span>
           </div>
           
-          <div className="relative z-10 mb-8">
-            <img src="/assets/logo.png" alt="MVIZ Technologies" className="h-28 w-auto" />
-          </div>
-
+          
           <div className="flex flex-col md:flex-row gap-10 text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 relative z-10">
             <div className="flex flex-col">
               <span className="text-slate-400 mb-1">MVIZ TECHNOLOGIES PRIVATE LIMITED</span>
