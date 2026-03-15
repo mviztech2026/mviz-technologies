@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ChevronRight, Layers, Cpu, Globe, Smartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
@@ -36,6 +37,62 @@ const projects = [
   }
 ];
 
+// Enterprise Products Featured Project
+const EnterpriseProductsCard = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="w-full mb-16"
+  >
+    <div className="relative h-[400px] rounded-3xl overflow-hidden group cursor-pointer">
+      {/* Background Image */}
+      <img 
+        src="https://www.enterpriseproducts.com/media-library/epd/e6988dda-26b4-4efb-8dfc-67fde4e521a9.jpg" 
+        alt="Enterprise Products"
+        className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:blur-md group-hover:scale-105"
+      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-all duration-500" />
+      
+      {/* Content - Default View */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 group-hover:opacity-0 transition-opacity duration-500">
+        <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-4">
+          Enterprise Products
+        </h2>
+      </div>
+      
+      {/* Hover Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 opacity-0 group-hover:opacity-100 transition-all duration-500">
+        <img 
+          src="/assets/logitrack.png" 
+          alt="Enterprise Products"
+          className="w-24 h-24 object-contain mb-6 rounded-2xl"
+        />
+        <h3 className="text-3xl font-black text-white mb-4">Enterprise Products</h3>
+        <p className="text-white/90 text-lg max-w-md mb-8 leading-relaxed">
+          Advanced enterprise-grade IT solutions delivering scalable infrastructure and cutting-edge technology for modern businesses.
+        </p>
+        <div className="flex gap-4">
+          <Link 
+            to="/services/enterprise-products" 
+            className="px-8 py-3 bg-white text-primary font-bold rounded-full hover:bg-white/90 transition-all"
+          >
+            Read More
+          </Link>
+          <Link 
+            to="/contact" 
+            className="px-8 py-3 bg-accent text-white font-bold rounded-full hover:bg-accent/90 transition-all"
+          >
+            Enquire Now
+          </Link>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
+
 export const Projects = () => {
   return (
     <div className="pb-20 relative overflow-hidden">
@@ -48,6 +105,9 @@ export const Projects = () => {
       </div>
 
       <div className="section-padding relative z-10">
+        {/* Enterprise Products Featured Card */}
+        <EnterpriseProductsCard />
+        
         <div className="space-y-16 md:space-y-24">
           {projects.map((project, idx) => (
             <motion.div 
@@ -96,7 +156,7 @@ export const Projects = () => {
                   {project.desc}
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="p-10 glass-card border-white/40 relative overflow-hidden group/card hover:bg-white/80 transition-all duration-500">
                     <h4 className="text-[10px] font-black text-slate-400 mb-8 uppercase tracking-[0.3em] relative z-10">Business Impact</h4>
                     <ul className="space-y-5 relative z-10">

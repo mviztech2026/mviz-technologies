@@ -133,7 +133,7 @@ export const Home = () => {
       {/* HERO SECTION */}
 
       <section
-        className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+        className="relative h-[calc(100vh-80px)] flex items-center overflow-hidden"
         style={{
           backgroundImage: 'url("https://media.istockphoto.com/id/1622423387/vector/abstract-technology-background-with-red-and-black-cubes.jpg?s=612x612&w=0&k=20&c=rQ82eBwREnx3mUoXzxHIv21DwUoCV8ZK-zUMySCj8h4=")',
           backgroundSize: 'cover',
@@ -143,25 +143,21 @@ export const Home = () => {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="section-padding w-full text-center relative z-10">
+        <div className="section-padding w-full text-center relative z-10 -mt-10">
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-[7rem] font-extrabold text-white leading-[0.9] mb-10"
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[0.95] mb-6"
           >
-            Engineering <br />
-            <span className="italic font-serif font-normal">Future-Ready</span> <br />
-            Enterprise Solutions
+            Engineering <span className="italic font-serif font-normal">Future-Ready</span> Enterprise Solutions
           </motion.h1>
 
-          <p className="text-xl text-slate-200 mb-12 max-w-2xl mx-auto">
-            MVIZ Technologies delivers high-performance digital infrastructure,
-            intelligent automation and enterprise software solutions designed
-            to accelerate your business growth.
+          <p className="text-base md:text-lg text-slate-200 mb-8 max-w-xl mx-auto">
+            High-performance digital infrastructure, intelligent automation and enterprise software solutions.
           </p>
 
-          <Link to="/contact" className="btn-primary px-10 py-5 text-lg">
+          <Link to="/contact" className="btn-primary px-8 py-4 text-base">
             Start a Project <ArrowRight className="inline ml-2" />
           </Link>
 
@@ -172,7 +168,7 @@ export const Home = () => {
 
       {/* SERVICES OVERVIEW */}
 
-      <section className="py-12 bg-slate-50 relative overflow-hidden">
+      <section className="py-8 md:py-12 bg-slate-50 relative overflow-hidden">
 
         <div className="section-padding">
 
@@ -227,7 +223,7 @@ export const Home = () => {
 
       {/* STATS */}
 
-      <section className="py-16 bg-accent text-white">
+      <section className="py-10 md:py-16 bg-primary text-white">
 
         <div className="section-padding grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
@@ -255,7 +251,7 @@ export const Home = () => {
 
       {/* PROCESS */}
 
-      <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+      <section className="py-10 md:py-16 bg-gradient-to-b from-white to-slate-50">
 
         <div className="section-padding">
           <div className="text-center mb-16">
@@ -349,7 +345,7 @@ export const Home = () => {
 
       {/* CTA */}
 
-      <section className="py-20 text-center">
+      <section className="py-12 md:py-20 text-center">
         <div className="section-padding">
           <h2 className="text-4xl md:text-6xl font-black text-primary mb-6 tracking-tight">
             Waiting for your next project to be done?

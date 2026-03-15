@@ -38,9 +38,9 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 w-full z-50 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center px-8 py-4">
+        <div className="flex justify-between items-center pl-4 pr-2 py-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/assets/logo.png" alt="MVIZ Technologies" className="h-12 w-auto group-hover:opacity-80 transition-opacity" />
+            <img src="/assets/logo.png" alt="MVIZ Technologies" className="h-14 w-auto group-hover:opacity-80 transition-opacity" />
           </Link>
 
           {/* Desktop Nav */}
@@ -58,8 +58,9 @@ const Navbar = () => {
                   <div className="absolute top-full left-0 pt-4 w-[600px]">
                     <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 grid grid-cols-2 gap-2">
                       {link.dropdown.map(sub => (
-                        <Link key={sub.path} to={sub.path} className="text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-accent p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                        <Link key={sub.path} to={sub.path} className="text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-accent p-3 hover:bg-slate-50 rounded-xl transition-colors relative group">
                           {sub.name}
+                          <span className="absolute bottom-2 left-3 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-[calc(100%-24px)]" />
                         </Link>
                       ))}
                     </div>
@@ -73,7 +74,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <button className="md:hidden text-slate-900 p-2 hover:bg-slate-100 rounded-xl transition-colors" onClick={() => setIsOpen(!isOpen)}>
+          <button className="md:hidden text-slate-900 p-2 mr-4 hover:bg-slate-100 rounded-xl transition-colors" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -152,9 +153,24 @@ const Footer = () => {
             <li><Link to="/blog" className="hover:text-accent transition-colors flex items-center gap-3 group"><ChevronRight size={14} className="text-accent group-hover:translate-x-1 transition-transform" /> Insights</Link></li>
             <li><Link to="/contact" className="hover:text-accent transition-colors flex items-center gap-3 group"><ChevronRight size={14} className="text-accent group-hover:translate-x-1 transition-transform" /> Contact</Link></li>
           </ul>
+          
+          {/* Contact info under Company for mobile */}
+          <div className="mt-10 lg:hidden">
+            <h4 className="text-white font-black mb-6 text-[10px] uppercase tracking-[0.3em]">Contact Info</h4>
+            <ul className="space-y-4 text-sm font-medium">
+              <li className="flex items-center gap-4">
+                <Mail size={14} className="text-accent" />
+                <span>alliance@mvizindia.com</span>
+              </li>
+              <li className="flex items-center gap-4">
+                <Phone size={14} className="text-accent" />
+                <span>+91 9960925523</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
+        <div className="hidden lg:block">
           <h4 className="text-white font-black mb-10 text-[10px] uppercase tracking-[0.3em]">Contact</h4>
           <ul className="space-y-6 text-sm font-medium">
             <li className="flex items-center gap-5 group cursor-pointer">
@@ -174,7 +190,7 @@ const Footer = () => {
                 <MapPin size={16} className="text-accent group-hover:text-white" />
               </div>
               <span className="group-hover:text-accent transition-colors leading-relaxed">
-                A-1101, Mainland Valencia,<br />Kesnand Road, Wagholi, Pune,<br />Maharashtra, India, 412207
+                Plot No 15, Diamond City,<br />Bandhgora, Pinda Joda,<br />Bokaro, Jharkhand 827013
               </span>
             </li>
           </ul>
@@ -222,7 +238,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow pt-20 md:pt-0">
+      <main className="flex-grow">
         {children}
       </main>
       <Footer />

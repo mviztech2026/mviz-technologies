@@ -31,7 +31,7 @@ export const Services = () => {
       </div>
       
       <div className="section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, idx) => (
             <Link key={service.id} to={`/services/${service.id}`} className="glass-card p-10 border-white/40 hover:border-accent/50 transition-all group">
               <div className="text-accent mb-6 group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_8px_rgba(251,146,60,0.6)]">{service.icon}</div>

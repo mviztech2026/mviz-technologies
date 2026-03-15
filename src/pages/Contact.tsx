@@ -53,16 +53,16 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex gap-8 items-start group">
+              <div className="flex gap-8 items-start group cursor-pointer" onClick={() => window.open('https://maps.app.goo.gl/knmrM2BNLio8o4eK7', '_blank')}>
                 <div className="w-16 h-16 shrink-0 glass-card flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-xl">
                   <MapPin size={28} />
                 </div>
                 <div>
                   <h4 className="text-[10px] font-black text-slate-400 mb-2 uppercase tracking-[0.3em]">Visit Us</h4>
                   <p className="text-2xl font-black text-primary group-hover:text-accent transition-colors tracking-tight leading-tight">
-                    A-1101, Mainland Valencia,<br />Kesnand Road, Wagholi, Pune
+                    Plot No 15, Diamond City,<br />Bandhgora, Pinda Joda, Bokaro
                   </p>
-                  <p className="text-slate-400 text-sm font-medium mt-1">Maharashtra, India, 412207</p>
+                  <p className="text-slate-400 text-sm font-medium mt-1">Jharkhand 827013</p>
                 </div>
               </div>
             </div>
@@ -131,21 +131,20 @@ export const Contact = () => {
 
       {/* Map Placeholder */}
       <section className="mt-32 px-6 max-w-7xl mx-auto mb-24">
-        <div className="w-full h-[500px] glass-card border-white/40 overflow-hidden relative shadow-2xl group">
+        <a href="https://maps.app.goo.gl/knmrM2BNLio8o4eK7" target="_blank" rel="noopener noreferrer" className="block w-full h-[500px] glass-card border-white/40 overflow-hidden relative shadow-2xl group cursor-pointer">
           <div className="absolute inset-0 bg-slate-100 flex items-center justify-center text-slate-400 flex-col gap-6 group-hover:bg-slate-50 transition-colors duration-500">
             <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-accent shadow-xl animate-bounce">
               <MapPin size={48} />
             </div>
             <div className="text-center">
-              <h3 className="text-2xl font-black text-primary tracking-tight mb-2">Pune, India HQ</h3>
-              <p className="text-slate-500 font-medium">Mainland Valencia, Wagholi</p>
+              <h3 className="text-2xl font-black text-primary tracking-tight mb-2">Bokaro, Jharkhand</h3>
+              <p className="text-slate-500 font-medium">Plot No 15, Diamond City, Bandhgora</p>
             </div>
           </div>
-          {/* In a real app, you'd embed Google Maps here */}
           <div className="absolute bottom-8 right-8 glass-card px-6 py-3 text-[10px] font-black uppercase tracking-widest text-primary border-white/40">
-            Click to expand map
+            Click to open in Google Maps
           </div>
-        </div>
+        </a>
       </section>
     </div>
   );
