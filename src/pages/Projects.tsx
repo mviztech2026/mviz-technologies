@@ -112,8 +112,54 @@ export const Projects = () => {
               viewport={{ once: true }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
             >
-              {/* Image Section */}
-              <div className={`relative group ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
+              {/* Content Section - Mobile First */}
+              <div className={`${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                {/* Category & Meta */}
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <span className="px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-black uppercase tracking-wider">
+                    {project.category}
+                  </span>
+                  <span className="text-slate-400 text-sm">|</span>
+                  <span className="text-slate-500 text-sm font-medium flex items-center gap-1">
+                    <Calendar size={14} /> {project.duration}
+                  </span>
+                  <span className="text-slate-400 text-sm">|</span>
+                  <span className="text-slate-500 text-sm font-medium flex items-center gap-1">
+                    <Users size={14} /> {project.team}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4 tracking-tighter leading-tight group-hover:text-accent transition-colors">
+                  {project.title}
+                </h2>
+                
+                {/* Client */}
+                <p className="text-slate-500 font-medium mb-6 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-accent rounded-full"></span>
+                  Client: {project.client}
+                </p>
+
+                {/* Description */}
+                <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
+                  {project.desc}
+                </p>
+
+                {/* Challenge & Solution */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  <div className="bg-slate-50 rounded-xl p-5 border-l-4 border-accent">
+                    <h4 className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">Challenge</h4>
+                    <p className="text-sm text-slate-700 leading-relaxed">{project.challenge}</p>
+                  </div>
+                  <div className="bg-slate-50 rounded-xl p-5 border-l-4 border-primary">
+                    <h4 className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">Solution</h4>
+                    <p className="text-sm text-slate-700 leading-relaxed">{project.solution}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Section - Desktop First */}
+              <div className={`relative group ${idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
                 <div className="relative z-10 space-y-6">
                   <div className="aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-2xl relative">
                     <img 
@@ -174,52 +220,6 @@ export const Projects = () => {
 
                 {/* Decorative Elements */}
                 <div className={`absolute -top-8 -left-8 w-48 h-48 bg-accent/10 rounded-full blur-3xl -z-10 ${idx % 2 === 1 ? 'lg:-right-8 lg:left-auto' : ''}`} />
-              </div>
-              
-              {/* Content Section */}
-              <div className={`${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                {/* Category & Meta */}
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-black uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                  <span className="text-slate-400 text-sm">|</span>
-                  <span className="text-slate-500 text-sm font-medium flex items-center gap-1">
-                    <Calendar size={14} /> {project.duration}
-                  </span>
-                  <span className="text-slate-400 text-sm">|</span>
-                  <span className="text-slate-500 text-sm font-medium flex items-center gap-1">
-                    <Users size={14} /> {project.team}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4 tracking-tighter leading-tight group-hover:text-accent transition-colors">
-                  {project.title}
-                </h2>
-                
-                {/* Client */}
-                <p className="text-slate-500 font-medium mb-6 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-accent rounded-full"></span>
-                  Client: {project.client}
-                </p>
-
-                {/* Description */}
-                <p className="text-slate-600 mb-8 leading-relaxed text-lg font-light">
-                  {project.desc}
-                </p>
-
-                {/* Challenge & Solution */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  <div className="bg-slate-50 rounded-xl p-5 border-l-4 border-accent">
-                    <h4 className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">Challenge</h4>
-                    <p className="text-sm text-slate-700 leading-relaxed">{project.challenge}</p>
-                  </div>
-                  <div className="bg-slate-50 rounded-xl p-5 border-l-4 border-primary">
-                    <h4 className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">Solution</h4>
-                    <p className="text-sm text-slate-700 leading-relaxed">{project.solution}</p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
