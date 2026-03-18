@@ -88,7 +88,7 @@ const stats = [
 
 export const Projects = () => {
   return (
-    <div className="pb-20 relative overflow-hidden">
+    <div className="pb-16 relative overflow-hidden">
       {/* Hero Section */}
       <div className="relative w-full h-[50vh] mb-8">
         <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" alt="" className="w-full h-full object-cover" />
