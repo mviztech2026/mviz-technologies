@@ -77,7 +77,7 @@ export const Contact = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative w-full h-[35vh] md:h-[45vh] mb-8 md:mb-16">
+      <div className="relative w-full h-[25vh] md:h-[45vh] mb-4 md:mb-16">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80" />
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay" />
         <div className="relative h-full flex items-center justify-center">
@@ -87,14 +87,14 @@ export const Contact = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-xs md:text-sm font-medium mb-3 md:mb-6">
                 <MessageSquare size={16} />
                 Get in Touch
               </span>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 text-white">
+              <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-2 md:mb-4 text-white">
                 Contact Us
               </h1>
-              <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto font-light">
+              <p className="text-base md:text-xl text-white/80 max-w-2xl mx-auto font-light">
                 Let's discuss how we can help transform your business with technology
               </p>
             </motion.div>
@@ -102,37 +102,37 @@ export const Contact = () => {
         </div>
       </div>
 
-      <div className="section-padding relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div className="section-padding relative z-10 px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-12 lg:gap-16 items-start">
           {/* Left Side - Contact Info */}
-          <div className="lg:col-span-2 space-y-4 md:space-y-8">
+          <div className="lg:col-span-2 space-y-3 md:space-y-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-black text-primary mb-4 tracking-tight">
+              <h2 className="text-2xl md:text-4xl font-black text-primary mb-2 md:mb-4 tracking-tight">
                 Let's Start a <span className="text-accent">Conversation</span>
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-4 md:mb-8">
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-2 md:mb-8">
                 Whether you're looking for IT infrastructure solutions, cloud migration, or managed services, our team is ready to help you achieve your goals.
               </p>
             </motion.div>
 
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-3 md:space-y-6">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex gap-5 items-start group p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
+                className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg">
-                  <img src="https://cdn-icons-png.flaticon.com/128/15582/15582668.png" alt="Email" className="w-8 h-8" />
+                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg">
+                  <img src="https://cdn-icons-png.flaticon.com/128/15582/15582668.png" alt="Email" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Email Us</h4>
-                  <p className="text-xl font-bold text-primary">alliance@mvizindia.com</p>
-                  <p className="text-slate-500 text-sm mt-1">Response within 24 hours</p>
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Email Us</h4>
+                  <p className="text-lg md:text-xl font-bold text-primary">alliance@mvizindia.com</p>
+                  <p className="text-slate-500 text-xs md:text-sm mt-1">Response within 24 hours</p>
                 </div>
               </motion.div>
               
@@ -140,15 +140,15 @@ export const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="flex gap-5 items-start group p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
+                className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center text-white shadow-lg">
-                  <img src="https://cdn-icons-png.flaticon.com/128/15579/15579182.png" alt="Phone" className="w-8 h-8" />
+                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center text-white shadow-lg">
+                  <img src="https://cdn-icons-png.flaticon.com/128/15579/15579182.png" alt="Phone" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us</h4>
-                  <p className="text-xl font-bold text-primary">+91 9960925523</p>
-                  <p className="text-slate-500 text-sm mt-1">Mon - Fri, 9am - 6pm IST</p>
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us</h4>
+                  <p className="text-lg md:text-xl font-bold text-primary">+91 9960925523</p>
+                  <p className="text-slate-500 text-xs md:text-sm mt-1">Mon - Fri, 9am - 6pm IST</p>
                 </div>
               </motion.div>
 
@@ -156,26 +156,26 @@ export const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex gap-5 items-start group p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={() => window.open('https://maps.app.goo.gl/knmrM2BNLio8o4eK7', '_blank')}
               >
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/80 to-accent/80 flex items-center justify-center text-white shadow-lg">
-                  <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-8 h-8" />
+                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/80 to-accent/80 flex items-center justify-center text-white shadow-lg">
+                  <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Visit Us</h4>
-                  <p className="text-lg font-bold text-primary leading-snug">
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Visit Us</h4>
+                  <p className="text-base md:text-lg font-bold text-primary leading-snug">
                     Plot No 15, Diamond City,<br />
                     Bandhgora, Pinda Joda, Bokaro
                   </p>
-                  <p className="text-slate-500 text-sm mt-1">Jharkhand 827013</p>
+                  <p className="text-slate-500 text-xs md:text-sm mt-1">Jharkhand 827013</p>
                 </div>
               </motion.div>
             </div>
 
             {/* Location Info Cards */}
-            <div className="mt-6 md:mt-10 space-y-3 md:space-y-4">
-              <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wider mb-2 md:mb-4">Our Locations</h3>
+            <div className="mt-4 md:mt-10 space-y-2 md:space-y-4">
+              <h3 className="text-base md:text-lg font-bold text-slate-800 uppercase tracking-wider mb-1 md:mb-4">Our Locations</h3>
               
               {/* Headquarters */}
               <motion.div 
@@ -228,25 +228,25 @@ export const Contact = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="lg:col-span-3"
           >
-            <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-slate-100 relative overflow-hidden">
+            <div className="bg-white rounded-3xl p-4 md:p-10 shadow-2xl border border-slate-100 relative overflow-hidden">
               {/* Decorative Elements */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/5 to-accent/5 rounded-full -mr-20 -mt-20 blur-2xl" />
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-accent/5 to-primary/5 rounded-full -ml-16 -mb-16 blur-2xl" />
               
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4 md:mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
-                    <Send size={24} />
+                <div className="flex items-center gap-3 mb-3 md:mb-8">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+                    <Send size={16} className="md:size-24" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black text-primary tracking-tight">Send us a message</h3>
-                    <p className="text-slate-500 text-sm">Fill out the form below and we'll get back to you shortly</p>
+                    <h3 className="text-lg md:text-2xl font-black text-primary tracking-tight">Send us a message</h3>
+                    <p className="text-slate-500 text-xs md:text-sm">Fill out the form below and we'll get back to you shortly</p>
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-3 md:space-y-6">
                   {/* Name & Email Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-700 uppercase tracking-wide flex items-center gap-2">
                         <img src="https://cdn-icons-png.flaticon.com/128/15582/15582668.png" alt="User" className="w-4 h-4" />
@@ -259,7 +259,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="Enter your full name"
                         required
-                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400"
+                        className="w-full px-3 md:px-5 py-3 md:py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400 text-sm md:text-base"
                       />
                     </div>
                     <div className="space-y-2">
@@ -274,13 +274,13 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="Enter your email address"
                         required
-                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400"
+                        className="w-full px-3 md:px-5 py-3 md:py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400 text-sm md:text-base"
                       />
                     </div>
                   </div>
 
                   {/* Phone & Company Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-700 uppercase tracking-wide flex items-center gap-2">
                         <img src="https://cdn-icons-png.flaticon.com/128/15579/15579182.png" alt="Phone" className="w-4 h-4" />
@@ -292,7 +292,7 @@ export const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="Enter your phone number"
-                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400"
+                        className="w-full px-3 md:px-5 py-3 md:py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400 text-sm md:text-base"
                       />
                     </div>
                     <div className="space-y-2">
@@ -306,7 +306,7 @@ export const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Enter your company name"
-                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400"
+                        className="w-full px-3 md:px-5 py-3 md:py-4 rounded-xl bg-slate-50 border-2 border-slate-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400 text-sm md:text-base"
                       />
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export const Contact = () => {
                   </div>
 
                   {/* Budget & Timeline Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-700 uppercase tracking-wide">
                         Budget Range
