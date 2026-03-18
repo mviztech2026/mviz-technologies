@@ -50,7 +50,7 @@ export const Services = () => {
               
               {/* Default Content - Visible on mobile & desktop */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:group-hover:opacity-0 md:group-hover:pointer-events-none transition-all duration-500">
-                <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">
+                <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight">
                   {service.title}
                 </h3>
               </div>
@@ -62,13 +62,13 @@ export const Services = () => {
                   alt={service.title}
                   className="w-16 h-16 object-contain mb-4 rounded-xl bg-white p-2"
                 />
-                <h4 className="text-xl font-black text-white mb-2">{service.title}</h4>
-                <p className="text-white/90 text-sm mb-4 leading-relaxed">
+                <h4 className="text-2xl font-black text-white mb-2">{service.title}</h4>
+                <p className="text-white/90 text-base mb-4 leading-relaxed">
                   {service.desc}
                 </p>
                 <div className="flex gap-2">
                   <span 
-                    className="px-6 py-3 bg-white text-primary text-sm font-bold rounded-full hover:bg-white/90 transition-all"
+                    className="px-6 py-3 bg-white text-primary text-base font-black rounded-full hover:bg-white/90 transition-all"
                   >
                     Read More
                   </span>
