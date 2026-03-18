@@ -77,7 +77,7 @@ export const Contact = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative w-full h-[45vh] mb-16">
+      <div className="relative w-full h-[35vh] md:h-[45vh] mb-8 md:mb-16">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80" />
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay" />
         <div className="relative h-full flex items-center justify-center">
@@ -105,7 +105,7 @@ export const Contact = () => {
       <div className="section-padding relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Left Side - Contact Info */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-4 md:space-y-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -114,12 +114,12 @@ export const Contact = () => {
               <h2 className="text-3xl md:text-4xl font-black text-primary mb-4 tracking-tight">
                 Let's Start a <span className="text-accent">Conversation</span>
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+              <p className="text-slate-600 text-lg leading-relaxed mb-4 md:mb-8">
                 Whether you're looking for IT infrastructure solutions, cloud migration, or managed services, our team is ready to help you achieve your goals.
               </p>
             </motion.div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -174,8 +174,8 @@ export const Contact = () => {
             </div>
 
             {/* Location Info Cards */}
-            <div className="mt-10 space-y-4">
-              <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wider mb-4">Our Locations</h3>
+            <div className="mt-6 md:mt-10 space-y-3 md:space-y-4">
+              <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wider mb-2 md:mb-4">Our Locations</h3>
               
               {/* Headquarters */}
               <motion.div 
@@ -228,13 +228,13 @@ export const Contact = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="lg:col-span-3"
           >
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-slate-100 relative overflow-hidden">
+            <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-slate-100 relative overflow-hidden">
               {/* Decorative Elements */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/5 to-accent/5 rounded-full -mr-20 -mt-20 blur-2xl" />
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-accent/5 to-primary/5 rounded-full -ml-16 -mb-16 blur-2xl" />
               
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-8">
+                <div className="flex items-center gap-3 mb-4 md:mb-8">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
                     <Send size={24} />
                   </div>
@@ -244,7 +244,7 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   {/* Name & Email Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -425,14 +425,14 @@ export const Contact = () => {
       </div>
 
       {/* Map Section */}
-      <section className="mt-20 px-6 max-w-7xl mx-auto">
+      <section className="mt-8 md:mt-20 px-6 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-6 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-black text-primary mb-8 tracking-tight text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-primary mb-4 md:mb-8 tracking-tight text-center">
             Our <span className="text-accent">Locations</span>
           </h2>
           
