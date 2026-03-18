@@ -4,7 +4,7 @@ export const About = () => {
   return (
     <div className="pb-16 relative overflow-hidden">
       {/* Hero Section */}
-      <div className="relative w-full h-[40vh] mb-20">
+      <div className="relative w-full h-[40vh] mb-8">
         <img src="https://img.icons8.com/fluency/96/organization.png" alt="About" className="w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80 flex items-center justify-center">
           <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter">About Us</h1>
@@ -13,7 +13,7 @@ export const About = () => {
       
       <div className="section-padding relative z-10">
         {/* Story Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -66,7 +66,7 @@ export const About = () => {
                   <p className="text-primary font-black text-lg">Expert Team</p>
                 </div>
                 <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
-                  <img src="https://img.icons8.com/fluency/96/globe.png" alt="Global" className="w-20 h-20 mb-4" />
+                  <img src="https://cdn-icons-png.flaticon.com/128/2758/2758724.png" alt="Global" className="w-20 h-20 mb-4" />
                   <p className="text-primary font-black text-lg">Global Reach</p>
                 </div>
                 <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
@@ -79,8 +79,8 @@ export const About = () => {
         </div>
 
         {/* Mission & Values */}
-        <section className="mb-40">
-          <div className="text-center max-w-3xl mx-auto mb-24">
+        <section className="mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-[10px] font-black uppercase tracking-[0.3em] mb-8">
               Our DNA
             </div>
@@ -113,8 +113,8 @@ export const About = () => {
         </section>
 
         {/* Leadership */}
-        <section className="mb-20">
-          <div className="text-center mb-24">
+        <section className="mb-12">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-[10px] font-black uppercase tracking-[0.3em] mb-8">
               The Team
             </div>
