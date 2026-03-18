@@ -102,7 +102,7 @@ export const Contact = () => {
         </div>
       </div>
 
-      <div className="section-padding relative z-10 px-4 md:px-6">
+      <div className="section-padding relative z-10 px-6 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-12 lg:gap-16 items-start">
           {/* Left Side - Contact Info */}
           <div className="lg:col-span-2 space-y-3 md:space-y-8">
@@ -157,7 +157,7 @@ export const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
-                onClick={() => window.open('https://maps.app.goo.gl/knmrM2BNLio8o4eK7', '_blank')}
+                onClick={() => window.open('https://maps.app.goo.gl/vsgPwkT7itJ7ajaf7', '_blank')}
               >
                 <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/80 to-accent/80 flex items-center justify-center text-white shadow-lg">
                   <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-6 h-6 md:w-8 md:h-8" />
@@ -165,10 +165,10 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Visit Us</h4>
                   <p className="text-base md:text-lg font-bold text-primary leading-snug">
-                    Plot No 15, Diamond City,<br />
-                    Bandhgora, Pinda Joda, Bokaro
+                    A-1101, Mainland Valencia,<br />
+                    Kesnand Road, Vagholi
                   </p>
-                  <p className="text-slate-500 text-xs md:text-sm mt-1">Jharkhand 827013</p>
+                  <p className="text-slate-500 text-xs md:text-sm mt-1">Pune, Maharashtra 412207</p>
                 </div>
               </motion.div>
             </div>
