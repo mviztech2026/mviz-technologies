@@ -101,7 +101,7 @@ const solutionIcons = [
   { title: "OEM Licenses", icon: <img src="https://cdn-icons-png.flaticon.com/128/10690/10690664.png" alt="OEM" className="w-12 h-12" /> },
   { title: "PPS (PC, Print & Supplies)", icon: <img src="https://cdn-icons-png.flaticon.com/128/9820/9820042.png" alt="PPS" className="w-12 h-12" /> },
   { title: "Maintenance & Support", icon: <img src="https://cdn-icons-png.flaticon.com/128/15633/15633753.png" alt="Maintenance" className="w-12 h-12" /> },
-  { title: "Contact us for more", icon: <ArrowRight size={32} />, link: "/contact" }
+  { title: "Contact us for more", icon: <img src="https://cdn-icons-png.flaticon.com/128/3095/3095583.png" alt="Contact" className="w-10 h-10" />, link: "/contact" }
 ];
 
 
