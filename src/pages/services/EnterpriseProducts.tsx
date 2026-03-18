@@ -191,7 +191,7 @@ export const EnterpriseProducts = () => {
       {/* Overview Paragraph */}
       <div className="section-padding pt-2">
         <div className="mb-16">
-          <p className="text-2xl text-slate-700 leading-relaxed font-normal">
+          <p className="text-base md:text-2xl text-slate-700 leading-relaxed font-normal">
             Welcome to the Enterprise Product and Services Business Unit of Mviz Technologies. We specialize in delivering enterprise-grade IT infrastructure solutions for government organizations, PSUs, and corporate customers. Our approach focuses on understanding each organization's pain points, operational challenges, and available resources in order to design the right technology architecture. Our team collaborates closely with OEM technical experts to deliver reliable, scalable, and cost-effective infrastructure solutions that support critical business applications and long-term digital transformation.
           </p>
         </div>
