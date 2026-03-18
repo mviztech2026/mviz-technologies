@@ -87,6 +87,7 @@ const partners = [
   { name: "HPE", logo: "https://logo.clearbit.com/hpe.com" },
   { name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
   { name: "Dell", logo: "https://logo.clearbit.com/dell.com" },
+  { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
   { name: "Aruba", logo: "https://logo.clearbit.com/arubanetworks.com" },
   { name: "NetApp", logo: "https://logo.clearbit.com/netapp.com" },
   { name: "Poly", logo: "https://logo.clearbit.com/poly.com" },
@@ -107,7 +108,7 @@ const industries = [
 const faqs: FAQItem[] = [
   {
     question: "What enterprise server options does Mviz Technologies offer?",
-    answer: "We provide a comprehensive range of enterprise servers including rack-mounted, tower, and blade server configurations from leading OEMs like HPE, Dell, and Cisco. Our server solutions support virtualization, high-performance computing, database applications, and business-critical workloads with options for redundancy, hot-swappable components, and scalable storage expansion."
+    answer: "We provide a comprehensive range of enterprise servers including rack-mounted, tower, and blade server configurations from leading OEMs like Microsoft, HPE, Dell, and Cisco. Our server solutions support virtualization, high-performance computing, database applications, and business-critical workloads with options for redundancy, hot-swappable components, and scalable storage expansion."
   },
   {
     question: "How do you design network infrastructure for large enterprises?",
