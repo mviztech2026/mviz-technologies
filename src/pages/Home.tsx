@@ -133,17 +133,15 @@ export const Home = () => {
 
       {/* HERO SECTION */}
 
-      <section className="relative h-[calc(100vh-80px)] flex items-center overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover blur-sm"
-        >
-          <source src="/assets/homepage.mp4" type="video/mp4" />
-        </video>
+      <section
+        className="relative h-[calc(100vh-80px)] flex items-center overflow-hidden"
+        style={{
+          backgroundImage: 'url("https://media.istockphoto.com/id/1622423387/vector/abstract-technology-background-with-red-and-black-cubes.jpg?s=612x612&w=0&k=20&c=rQ82eBwREnx3mUoXzxHIv21DwUoCV8ZK-zUMySCj8h4=")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(4px)'
+        }}
+      >
 
         <div className="absolute inset-0 bg-black/40" />
 
