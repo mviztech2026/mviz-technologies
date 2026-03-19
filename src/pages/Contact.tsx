@@ -420,7 +420,7 @@ export const Contact = () => {
             Our <span className="text-accent">Locations</span>
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Headquarters - Pune */}
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
               <div className="bg-gradient-to-r from-primary to-accent p-4 md:p-6">

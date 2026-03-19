@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, Github, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronUp, Github, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface LayoutProps {
@@ -55,12 +55,12 @@ const Navbar = () => {
                   <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full ${location.pathname === link.path ? 'w-full' : ''}`} />
                 </Link>
                 {link.dropdown && servicesOpen && (
-                  <div className="absolute top-full left-0 pt-4 w-[600px]">
-                    <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 grid grid-cols-2 gap-2">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[500px] max-w-[90vw]">
+                    <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 grid grid-cols-2 gap-2">
                       {link.dropdown.map(sub => (
-                        <Link key={sub.path} to={sub.path} className="text-xs font-medium text-slate-600 hover:text-accent p-3 hover:bg-slate-50 rounded-xl transition-colors relative group">
+                        <Link key={sub.path} to={sub.path} className="text-xs font-medium text-slate-600 hover:text-accent p-2 hover:bg-slate-50 rounded-xl transition-colors relative group">
                           {sub.name}
-                          <span className="absolute bottom-2 left-3 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-[calc(100%-24px)]" />
+                          <span className="absolute bottom-1 left-2 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-[calc(100%-16px)]" />
                         </Link>
                       ))}
                     </div>
@@ -191,8 +191,6 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row gap-2 md:gap-8">
               <span>&copy; 2026 MVIZ Technologies. All rights reserved.</span>
               <span className="hidden md:inline">|</span>
-              <span>MVIZ TECHNOLOGIES PRIVATE LIMITED</span>
-              <span className="hidden md:inline">|</span>
               <span>CIN: U46511PN2025PTC245816</span>
             </div>
             <div className="flex gap-6 mt-4 md:mt-0">
@@ -220,6 +218,19 @@ export const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      
+      {/* Scroll to Top Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-primary to-accent text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50"
+        aria-label="Scroll to top"
+      >
+        <ChevronUp size={24} />
+      </motion.button>
     </div>
   );
 };

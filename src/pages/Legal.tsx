@@ -108,7 +108,7 @@ export const Terms = () => {
 
           <section>
             <h2 className="text-2xl font-black text-primary mb-4">5. Governing Law</h2>
-            <p>These terms and conditions are governed by and construed in accordance with the laws of the State of California and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+            <p>These terms and conditions are governed by and construed in accordance with the laws of India and you irrevocably submit to the exclusive jurisdiction of the courts in Pune, Maharashtra, India.</p>
           </section>
         </div>
       </div>
