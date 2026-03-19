@@ -21,7 +21,7 @@ export const About = () => {
               We aren't just an <span className="text-accent">outsourced coding factory</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              PS AI Tech Solutions operates as an extension of your core team. We understand that for CTOs and founders, code quality and communication are critical.
+              MVIZ Technologies operates as an extension of your core team. We understand that for CTOs and founders, code quality and communication are critical.
             </p>
           </div>
 

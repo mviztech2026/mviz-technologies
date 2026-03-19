@@ -178,7 +178,7 @@ const Footer = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <MapPin size={14} className="text-accent mt-1 shrink-0" />
-                  <span>Plot No 15, Diamond City, Bandhgora, Pinda Joda, Bokaro, Jharkhand 827013</span>
+                  <span>A-1101, Mainland Valencia, Kesnand Road, Vagholi, Pune, Maharashtra 412207</span>
                 </li>
               </ul>
             </div>
