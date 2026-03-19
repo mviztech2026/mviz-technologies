@@ -140,7 +140,7 @@ export const Home = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover blur-sm"
         >
           <source src="/assets/homepage.mp4" type="video/mp4" />
         </video>
