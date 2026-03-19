@@ -25,7 +25,7 @@ export const ServiceTemplate = ({ title, overview, solutions, partners, industri
       <div className="relative w-full h-[40vh] mb-20">
         <img src={image} alt={title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter">{title}</h1>
+          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter text-center px-4">{title}</h1>
         </div>
       </div>
       <div className="section-padding">

@@ -90,19 +90,16 @@ export const Projects = () => {
   return (
     <div className="pb-16 relative overflow-hidden">
       {/* Hero Section */}
-      <div className="relative w-full h-[50vh] mb-8">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl px-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 text-white">Case Study Projects</h1>
-            <p className="text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto">
-              Discover how we've helped leading organizations transform their digital infrastructure and achieve measurable business results.
-            </p>
-          </div>
+      <div className="relative w-full h-[25vh] md:h-[35vh] mb-6 md:mb-8 flex items-center justify-center">
+        <div className="text-center text-primary max-w-4xl px-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4 md:mb-6 text-primary">Case Studies</h1>
+          <p className="text-base md:text-lg lg:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+            Discover how we've helped leading organizations transform their digital infrastructure and achieve measurable business results.
+          </p>
         </div>
       </div>
 
-      <div className="section-padding relative z-10 pt-0">
+      <div className="section-padding relative z-10 -mt-8 md:-mt-20">
         <div className="space-y-24 md:space-y-32">
           {projects.map((project, idx) => (
             <motion.div 
@@ -110,7 +107,7 @@ export const Projects = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start p-8 border border-slate-200 rounded-2xl bg-white shadow-sm"
             >
               {/* Content Section - Mobile First */}
               <div className={`${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
@@ -130,9 +127,19 @@ export const Projects = () => {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4 tracking-tighter leading-tight group-hover:text-accent transition-colors">
-                  {project.title}
-                </h2>
+                {project.title === "Raska Mon" ? (
+                  <img src="/assets/raska-logo.png" alt="Raska Mon" className="h-16 md:h-20 w-auto mb-4 object-contain" />
+                ) : project.title === "Aerth Mobility" ? (
+                  <img src="/assets/aerth-logo.png" alt="Aerth Mobility" className="h-16 md:h-20 w-auto mb-4 object-contain" />
+                ) : project.title === "HealthPulse Dashboard" ? (
+                  <img src="/assets/health-logo.png" alt="HealthPulse Dashboard" className="h-16 md:h-20 w-auto mb-4 object-contain" />
+                ) : project.title === "EcoShop Global" ? (
+                  <img src="/assets/ecoshop-logo.png" alt="EcoShop Global" className="h-16 md:h-20 w-auto mb-4 object-contain" />
+                ) : (
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4 tracking-tighter leading-tight group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h2>
+                )}
                 
                 {/* Client */}
                 <p className="text-slate-500 font-medium mb-6 flex items-center gap-2">
@@ -241,7 +248,7 @@ export const Projects = () => {
                 <Link to="/contact" className="btn-primary bg-accent hover:bg-accent-dark text-white border-0">
                   Start Your Project
                 </Link>
-                <Link to="/services" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold transition-all backdrop-blur-sm">
+                <Link to="/services" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-black transition-all backdrop-blur-sm">
                   Explore Services
                 </Link>
               </div>

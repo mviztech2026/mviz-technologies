@@ -11,6 +11,7 @@ import {
   Settings,
   Zap,
   ArrowRight,
+  ArrowUpRight,
   Search,
   Layout as LayoutIcon,
   Layers,
@@ -77,10 +78,10 @@ const processSteps = [
 ];
 
 const stats = [
-  { label: "Projects Delivered", value: "18+", icon: "https://img.icons8.com/fluency/96/project.png" },
-  { label: "Happy Clients", value: "9+", icon: "https://img.icons8.com/fluency/96/conference-call.png" },
-  { label: "Industries Served", value: "6", icon: "https://img.icons8.com/fluency/96/organization.png" },
-  { label: "Engineers", value: "8", icon: "https://img.icons8.com/fluency/96/engineering.png" },
+  { label: "Projects Delivered", value: "18+", icon: "https://cdn-icons-png.flaticon.com/128/3234/3234972.png" },
+  { label: "Happy Clients", value: "9+", icon: "https://cdn-icons-png.flaticon.com/128/9436/9436966.png" },
+  { label: "Industries Served", value: "6", icon: "https://cdn-icons-png.flaticon.com/128/12361/12361537.png" },
+  { label: "Engineers", value: "8", icon: "https://cdn-icons-png.flaticon.com/128/6010/6010054.png" },
 ];
 
 
@@ -157,9 +158,14 @@ export const Home = () => {
             High-performance digital infrastructure, intelligent automation and enterprise software solutions.
           </p>
 
-          <Link to="/contact" className="btn-primary px-8 py-4 text-base">
-            Start a Project <ArrowRight className="inline ml-2" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/contact" className="btn-primary px-8 py-4 text-base rounded-full border-2 border-accent/20 hover:border-accent/40 transition-all">
+              Start a Project <ArrowRight className="inline ml-2" />
+            </Link>
+            <Link to="/projects" className="px-8 py-4 text-base rounded-full border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all">
+              See our Projects <ArrowRight className="inline ml-2" />
+            </Link>
+          </div>
 
         </div>
       </section>
@@ -168,7 +174,7 @@ export const Home = () => {
 
       {/* SERVICES OVERVIEW */}
 
-      <section className="py-8 md:py-12 bg-slate-50 relative overflow-hidden">
+      <section className="py-6 md:py-8 bg-slate-50 relative overflow-hidden">
 
         <div className="section-padding">
 
@@ -186,9 +192,10 @@ export const Home = () => {
 
           {/* SERVICES GRID */}
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
 
-            {solutionIcons.map((service, idx) => (
+            {/* Show first 7 services on mobile, all on desktop */}
+            {solutionIcons.slice(0, 7).map((service, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -201,14 +208,58 @@ export const Home = () => {
                     <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-all">
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-primary">{service.title}</h3>
+                    <h3 className="text-lg font-black text-primary">{service.title}</h3>
                   </Link>
                 ) : (
                   <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group h-full">
                     <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-all">
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-primary">{service.title}</h3>
+                    <h3 className="text-lg font-black text-primary">{service.title}</h3>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+
+            {/* View All Services - Mobile only (8th block) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 7 * 0.05 }}
+              className="md:hidden"
+            >
+              <Link to="/services" className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group h-full">
+                <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-all">
+                  <ArrowRight size={32} />
+                </div>
+                <h3 className="text-lg font-black text-primary">View All Services</h3>
+              </Link>
+            </motion.div>
+
+            {/* Show remaining services on desktop only */}
+            {solutionIcons.slice(7).map((service, idx) => (
+              <motion.div
+                key={idx + 7}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (idx + 7) * 0.05 }}
+                className="hidden md:block"
+              >
+                {service.link ? (
+                  <Link to={service.link} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group h-full">
+                    <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-all">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-lg font-black text-primary">{service.title}</h3>
+                  </Link>
+                ) : (
+                  <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group h-full">
+                    <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-accent/10 group-hover:text-accent transition-all">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-lg font-black text-primary">{service.title}</h3>
                   </div>
                 )}
               </motion.div>
@@ -238,7 +289,7 @@ export const Home = () => {
             >
               <img src={stat.icon} alt={stat.label} className="w-16 h-16 mb-4" />
               <div className="text-5xl font-black">{stat.value}</div>
-              <div className="text-sm uppercase tracking-widest mt-2 font-bold">{stat.label}</div>
+              <div className="text-sm uppercase tracking-widest mt-2 font-black">{stat.label}</div>
 
             </motion.div>
 
@@ -286,7 +337,7 @@ export const Home = () => {
                     </div>
                   </div>
 
-                  <h5 className="text-lg font-bold text-slate-700 mb-3">{step.subtitle}</h5>
+                  <h5 className="text-lg font-black text-slate-700 mb-3">{step.subtitle}</h5>
                   <p className="text-slate-600 mb-6 leading-relaxed">{step.desc}</p>
 
                   <ul className="space-y-2">
@@ -322,7 +373,7 @@ export const Home = () => {
                     </div>
                   </div>
 
-                  <h5 className="text-lg font-bold text-slate-700 mb-3">{step.subtitle}</h5>
+                  <h5 className="text-lg font-black text-slate-700 mb-3">{step.subtitle}</h5>
                   <p className="text-slate-600 mb-6 leading-relaxed">{step.desc}</p>
 
                   <ul className="space-y-2">

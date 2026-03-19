@@ -1,0 +1,15 @@
+Key considerations:
+Domain 
+Certificate
+Seperate admin module and user modules
+Appropriate access management
+Workflows
+Placement of servers...web, backend
+Integrations
+Hardening of components
+APIs
+Security testings- Source Code Review, AppSec, PT, VA
+Session Management,
+
+Among all others..
+If you are using chat, messaging, etc...Static and Dynamic pages, integration with Databases, hosting on cloud or dedicated servers....

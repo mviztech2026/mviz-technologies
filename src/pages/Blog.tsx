@@ -107,7 +107,7 @@ export const Blog = () => {
               <p className="text-slate-300 text-xl md:text-2xl mb-12 leading-relaxed font-light">
                 Learn about the architectural patterns and infrastructure strategies we use to build systems that handle massive scale without compromising performance.
               </p>
-              <div className="flex flex-wrap items-center gap-10 text-sm text-slate-400 mb-16 font-bold uppercase tracking-widest">
+              <div className="flex flex-wrap items-center gap-10 text-sm text-slate-400 mb-16 font-black uppercase tracking-widest">
                 <span className="flex items-center gap-3"><User size={20} className="text-accent" /> Sarah Jenkins</span>
                 <span className="flex items-center gap-3"><Calendar size={20} className="text-accent" /> March 12, 2026</span>
               </div>

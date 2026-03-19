@@ -62,10 +62,10 @@ export const Industries = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-black uppercase tracking-widest mb-6">
               Our Domain Expertise
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-primary mb-8 tracking-tight">Industries <span className="text-accent">We Serve</span></h1>
+            <h1 className="text-5xl md:text-7xl font-black text-primary mb-8 tracking-tight">Industries <span className="text-accent">We Serve</span></h1>
             <p className="text-xl text-slate-600 leading-relaxed font-light">
               We bring deep domain expertise to every project, understanding the unique challenges and opportunities within your specific industry.
             </p>
@@ -91,9 +91,9 @@ export const Industries = () => {
               <div className={`w-16 h-16 ${industry.color} ${industry.textColor} rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500`}>
                 {industry.icon}
               </div>
-              <h3 className="text-3xl font-bold text-primary mb-6">{industry.title}</h3>
+              <h3 className="text-3xl font-black text-primary mb-6">{industry.title}</h3>
               <p className="text-slate-600 leading-relaxed text-lg mb-10 font-light">{industry.desc}</p>
-              <div className="flex items-center gap-3 text-accent font-bold text-xs uppercase tracking-[0.2em]">
+              <div className="flex items-center gap-3 text-accent font-black text-xs uppercase tracking-[0.2em]">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse" /> Domain Experts
               </div>
             </motion.div>
@@ -103,7 +103,7 @@ export const Industries = () => {
         <div className="mt-32 p-12 md:p-20 bg-primary text-white rounded-[4rem] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full -mr-48 -mt-48 blur-[100px]" />
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Tailored Solutions for Every Sector</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">Tailored Solutions for Every Sector</h2>
             <p className="text-slate-400 mb-10 text-lg leading-relaxed">
               We don't believe in one-size-fits-all. Our approach involves deep research into your industry's regulatory landscape, user behaviors, and competitive trends.
             </p>

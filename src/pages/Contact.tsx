@@ -77,35 +77,19 @@ export const Contact = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative w-full h-[25vh] md:h-[45vh] mb-4 md:mb-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay" />
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center text-white px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-xs md:text-sm font-medium mb-3 md:mb-6">
-                <MessageSquare size={16} />
-                Get in Touch
-              </span>
-              <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-2 md:mb-4 text-white">
-                Contact Us
-              </h1>
-              <p className="text-base md:text-xl text-white/80 max-w-2xl mx-auto font-light">
-                Let's discuss how we can help transform your business with technology
-              </p>
-            </motion.div>
-          </div>
+      <div className="relative w-full h-[15vh] md:h-[20vh] mb-2 md:mb-4 flex items-center justify-center pt-20 md:pt-24">
+        <div className="text-center text-primary max-w-4xl px-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-2 md:mb-3 text-primary">Contact Us</h1>
+          <p className="text-lg md:text-xl lg:text-2xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+            Let's discuss how we can help transform your business with technology
+          </p>
         </div>
       </div>
 
       <div className="section-padding relative z-10 px-6 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-12 lg:gap-16 items-start">
           {/* Left Side - Contact Info */}
-          <div className="lg:col-span-2 space-y-3 md:space-y-8">
+          <div className="lg:col-span-2 space-y-3 md:space-y-8 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -126,12 +110,12 @@ export const Contact = () => {
                 transition={{ delay: 0.1 }}
                 className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg">
+                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-lg">
                   <img src="https://cdn-icons-png.flaticon.com/128/15582/15582668.png" alt="Email" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Email Us</h4>
-                  <p className="text-lg md:text-xl font-bold text-primary">alliance@mvizindia.com</p>
+                  <p className="text-lg md:text-xl font-bold text-primary">support@mvizindia.com</p>
                   <p className="text-slate-500 text-xs md:text-sm mt-1">Response within 24 hours</p>
                 </div>
               </motion.div>
@@ -142,10 +126,10 @@ export const Contact = () => {
                 transition={{ delay: 0.2 }}
                 className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center text-white shadow-lg">
+                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-lg">
                   <img src="https://cdn-icons-png.flaticon.com/128/15579/15579182.png" alt="Phone" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us</h4>
                   <p className="text-lg md:text-xl font-bold text-primary">+91 9960925523</p>
                   <p className="text-slate-500 text-xs md:text-sm mt-1">Mon - Fri, 9am - 6pm IST</p>
@@ -159,10 +143,10 @@ export const Contact = () => {
                 className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={() => window.open('https://maps.app.goo.gl/vsgPwkT7itJ7ajaf7', '_blank')}
               >
-                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/80 to-accent/80 flex items-center justify-center text-white shadow-lg">
+                <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-lg">
                   <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Visit Us</h4>
                   <p className="text-base md:text-lg font-bold text-primary leading-snug">
                     A-1101, Mainland Valencia,<br />
@@ -185,7 +169,7 @@ export const Contact = () => {
                 className="flex gap-4 items-start group p-4 rounded-2xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
                 onClick={() => window.open('https://maps.app.goo.gl/vsgPwkT7itJ7ajaf7', '_blank')}
               >
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-primary flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-md">
                   <img src="https://cdn-icons-png.flaticon.com/128/1790/1790211.png" alt="HQ" className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
@@ -206,7 +190,7 @@ export const Contact = () => {
                 className="flex gap-4 items-start group p-4 rounded-2xl bg-gradient-to-r from-accent/5 to-accent/10 border border-accent/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
                 onClick={() => window.open('https://maps.app.goo.gl/19Q8qhuzek4G2ZSN8', '_blank')}
               >
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-accent flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-md">
                   <img src="https://cdn-icons-png.flaticon.com/128/1790/1790211.png" alt="Branch" className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
@@ -235,10 +219,10 @@ export const Contact = () => {
               
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-3 md:mb-8">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center">
                     <Send size={16} className="md:size-24" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-lg md:text-2xl font-black text-primary tracking-tight">Send us a message</h3>
                     <p className="text-slate-500 text-xs md:text-sm">Fill out the form below and we'll get back to you shortly</p>
                   </div>
@@ -444,7 +428,7 @@ export const Contact = () => {
                   <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
                     <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-7 h-7" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">Headquarters</h3>
                     <p className="text-white/80 text-sm font-medium">Pune, Maharashtra</p>
                   </div>
@@ -488,7 +472,7 @@ export const Contact = () => {
                   <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
                     <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-7 h-7" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">Branch Office</h3>
                     <p className="text-white/80 text-sm font-medium">Bokaro, Jharkhand</p>
                   </div>

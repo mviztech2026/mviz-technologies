@@ -185,7 +185,7 @@ export const EnterpriseProducts = () => {
           <span className="text-slate-400">/</span>
           <Link to="/services" className="hover:text-primary transition-colors font-medium">Our Services</Link>
           <span className="text-slate-400">/</span>
-          <span className="text-primary font-bold">Enterprise Products</span>
+          <span className="text-primary font-black">Enterprise Products</span>
         </nav>
       </div>
 
@@ -213,12 +213,12 @@ export const EnterpriseProducts = () => {
               
               {/* Content */}
               <div className="relative p-8">
-                <div className="flex items-start gap-4 mb-4">
+                <div className="flex items-center gap-4 mb-4">
                   <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     {s.icon}
                   </div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold text-primary mb-2 leading-tight">{s.title}</h4>
+                  <div className="text-center">
+                    <h4 className="text-xl font-black text-primary mb-2 leading-tight">{s.title}</h4>
                     <p className="text-slate-600 text-base leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
@@ -226,9 +226,9 @@ export const EnterpriseProducts = () => {
                 {/* Bullet Points */}
                 <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
                   {s.bullets.map((bullet, bi) => (
-                    <li key={bi} className="flex items-start gap-2 text-sm text-slate-600">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></span>
-                      <span className="leading-relaxed">{bullet}</span>
+                    <li key={bi} className="flex items-center justify-center gap-2 text-sm text-slate-600">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full shrink-0"></span>
+                      <span className="leading-relaxed text-center">{bullet}</span>
                     </li>
                   ))}
                 </ul>
@@ -255,7 +255,7 @@ export const EnterpriseProducts = () => {
                 }}
                 referrerPolicy="no-referrer"
               />
-              <span className="hidden font-bold text-primary text-sm text-center">{partner.name}</span>
+              <span className="hidden font-black text-primary text-sm text-center">{partner.name}</span>
             </div>
           ))}
         </div>
@@ -264,7 +264,7 @@ export const EnterpriseProducts = () => {
         <h2 className="text-4xl font-black text-primary mb-12 tracking-tighter">Industries Supported</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-20">
           {industries.map((industry, i) => (
-            <div key={i} className="bg-slate-100 p-6 rounded-2xl text-center font-bold text-primary">
+            <div key={i} className="bg-slate-100 p-6 rounded-2xl text-center font-black text-primary">
               {industry}
             </div>
           ))}

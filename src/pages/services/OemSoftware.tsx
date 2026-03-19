@@ -178,7 +178,7 @@ export const OemSoftware = () => {
           <span className="text-slate-400">/</span>
           <Link to="/services" className="hover:text-primary transition-colors font-medium text-xs md:text-base">Our Services</Link>
           <span className="text-slate-400">/</span>
-          <span className="text-primary font-bold text-xs md:text-base">OEM Software Licenses</span>
+          <span className="text-primary font-black text-xs md:text-base">OEM Software Licenses</span>
         </nav>
       </div>
 
@@ -205,23 +205,23 @@ export const OemSoftware = () => {
               </div>
               
               {/* Content */}
-              <div className="relative p-5 md:p-8">
-                <div className="flex items-start gap-3 md:gap-4 mb-4">
+              <div className="relative p-5 md:p-8 text-center">
+                <div className="flex flex-col items-center gap-3 md:gap-4 mb-4">
                   <div className="flex-shrink-0 w-10 h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <div className="w-6 h-6 md:w-10 md:h-10">{s.icon}</div>
                   </div>
-                  <div className="flex-1">
-                    <h4 className="text-base md:text-xl font-bold text-primary mb-1 md:mb-2 leading-tight">{s.title}</h4>
+                  <div className="text-center">
+                    <h4 className="text-base md:text-xl font-black text-primary mb-1 md:mb-2 leading-tight">{s.title}</h4>
                     <p className="text-slate-600 text-sm md:text-base leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
                 
                 {/* Bullet Points */}
-                <ul className="mt-4 space-y-1.5 border-t border-slate-100 pt-4">
+                <ul className="mt-4 space-y-1.5 border-t border-slate-100 pt-4 text-center">
                   {s.bullets.map((bullet, bi) => (
-                    <li key={bi} className="flex items-start gap-2 text-sm text-slate-600">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></span>
-                      <span className="leading-relaxed">{bullet}</span>
+                    <li key={bi} className="flex items-center justify-center gap-2 text-sm text-slate-600">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full shrink-0"></span>
+                      <span className="leading-relaxed text-center">{bullet}</span>
                     </li>
                   ))}
                 </ul>
@@ -248,7 +248,7 @@ export const OemSoftware = () => {
                 }}
                 referrerPolicy="no-referrer"
               />
-              <span className="hidden font-bold text-primary text-xs md:text-sm text-center">{partner.name}</span>
+              <span className="hidden font-black text-primary text-xs md:text-sm text-center">{partner.name}</span>
             </div>
           ))}
         </div>
@@ -257,7 +257,7 @@ export const OemSoftware = () => {
         <h2 className="text-2xl md:text-4xl font-black text-primary mb-6 md:mb-12 tracking-tighter">Industries Supported</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 mb-12 md:mb-20">
           {industries.map((industry, i) => (
-            <div key={i} className="bg-slate-100 p-3 md:p-6 rounded-xl md:rounded-2xl text-center font-bold text-primary text-xs md:text-base">
+            <div key={i} className="bg-slate-100 p-3 md:p-6 rounded-xl md:rounded-2xl text-center font-black text-primary text-xs md:text-base">
               {industry}
             </div>
           ))}
