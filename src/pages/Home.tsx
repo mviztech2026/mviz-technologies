@@ -133,15 +133,14 @@ export const Home = () => {
 
       {/* HERO SECTION */}
 
-      <section
-        className="relative h-[calc(100vh-80px)] flex items-center overflow-hidden"
-        style={{
-          backgroundImage: 'url("https://media.istockphoto.com/id/1622423387/vector/abstract-technology-background-with-red-and-black-cubes.jpg?s=612x612&w=0&k=20&c=rQ82eBwREnx3mUoXzxHIv21DwUoCV8ZK-zUMySCj8h4=")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(4px)'
-        }}
-      >
+      <section className="relative h-[calc(100vh-80px)] flex items-center overflow-hidden">
+        {/* Background Image with Blur */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center blur-md"
+          style={{
+            backgroundImage: 'url("https://media.istockphoto.com/id/1622423387/vector/abstract-technology-background-with-red-and-black-cubes.jpg?s=612x612&w=0&k=20&c=rQ82eBwREnx3mUoXzxHIv21DwUoCV8ZK-zUMySCj8h4=")'
+          }}
+        />
 
         <div className="absolute inset-0 bg-black/40" />
 
