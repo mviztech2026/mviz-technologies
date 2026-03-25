@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: mviztech2026/mviz-technologies
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - name: "contact"
+        label: "Contact Information"
+        file: "content/contact.json"
+        fields:
+          - { name: "email", label: "Email", widget: "string" }
+          - { name: "phone", label: "Phone Number", widget: "string" }
+          - { name: "hours", label: "Business Hours", widget: "string" }
+          - name: "headquarters"
+            label: "Headquarters Address"
+            widget: "object"
+            fields:
+              - { name: "line1", label: "Address Line 1", widget: "string" }
+              - { name: "line2", label: "Address Line 2", widget: "string" }
+              - { name: "city", label: "City", widget: "string" }
+              - { name: "state", label: "State", widget: "string" }
+              - { name: "pincode", label: "Pincode", widget: "string" }
+              - { name: "mapsLink", label: "Google Maps Link", widget: "string" }
+          - name: "branch"
+            label: "Branch Office Address"
+            widget: "object"
+            fields:
+              - { name: "line1", label: "Address Line 1", widget: "string" }
+              - { name: "line2", label: "Address Line 2", widget: "string" }
+              - { name: "city", label: "City", widget: "string" }
+              - { name: "state", label: "State", widget: "string" }
+              - { name: "pincode", label: "Pincode", widget: "string" }
+              - { name: "mapsLink", label: "Google Maps Link", widget: "string" }
+      
+      - name: "privacy"
+        label: "Privacy Policy"
+        file: "content/privacy.json"
+        fields:
+          - { name: "lastUpdated", label: "Last Updated", widget: "date" }
+          - name: "sections"
+            label: "Policy Sections"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Section Title", widget: "string" }
+              - name: "content"
+                label: "Content"
+                widget: "list"
+                field: { name: "point", label: "Bullet Point", widget: "text" }
+      
+      - name: "terms"
+        label: "Terms of Service"
+        file: "content/terms.json"
+        fields:
+          - { name: "lastUpdated", label: "Last Updated", widget: "date" }
+          - name: "sections"
+            label: "Terms Sections"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Section Title", widget: "string" }
+              - { name: "content", label: "Content", widget: "text" }
+      
+      - name: "footer"
+        label: "Footer Settings"
+        file: "content/footer.json"
+        fields:
+          - { name: "companyName", label: "Company Name", widget: "string" }
+          - { name: "tagline", label: "Tagline", widget: "string" }
+          - name: "socialLinks"
+            label: "Social Media Links"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { name: "linkedin", label: "LinkedIn URL", widget: "string", required: false }
+              - { name: "twitter", label: "Twitter URL", widget: "string", required: false }
+              - { name: "facebook", label: "Facebook URL", widget: "string", required: false }
+              - { name: "instagram", label: "Instagram URL", widget: "string", required: false }

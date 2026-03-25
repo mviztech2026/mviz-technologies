@@ -9,6 +9,7 @@ import { Industries } from './pages/Industries';
 import { Blog } from './pages/Blog';
 import { Contact } from './pages/Contact';
 import { Privacy, Terms } from './pages/Legal';
+import Admin from './pages/Admin';
 
 import { EnterpriseProducts } from './pages/services/EnterpriseProducts';
 import { SystemIntegration } from './pages/services/SystemIntegration';
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/admin" element={<Admin />} />
           {/* Fallback to Home */}
           <Route path="*" element={<Home />} />
         </Routes>
