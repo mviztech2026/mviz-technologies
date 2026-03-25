@@ -23,7 +23,7 @@ export const Admin = () => {
 
   // Load current config on mount
   useEffect(() => {
-    fetch('/api/config')
+    fetch('/.netlify/functions/config')
       .then(res => res.json())
       .then(data => setConfig({ ...defaultConfig, ...data }))
       .catch(() => setMessage('Could not load current settings'));
@@ -41,7 +41,7 @@ export const Admin = () => {
   const handleSave = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/config', {
+      const response = await fetch('/.netlify/functions/config', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ export const SiteProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     // Try to load from API first, then fallback to localStorage, then default
-    fetch('/api/config')
+    fetch('/.netlify/functions/config')
       .then(res => res.json())
       .then(data => setConfig({ ...defaultConfig, ...data }))
       .catch(() => {
