@@ -1,6 +1,7 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, ChevronDown, Building2, User, Briefcase, MessageSquare, Clock, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, ChevronDown, Building2, User, Briefcase, CheckCircle } from 'lucide-react';
+import contactData from '../../content/contact.json';
 
 const serviceOptions = [
   { value: "", label: "Select a Service", icon: Briefcase },
@@ -53,6 +54,18 @@ export const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [content, setContent] = useState(contactData);
+
+  useEffect(() => {
+    // Check for admin updates in localStorage (for preview during editing)
+    const saved = localStorage.getItem('mviz_site_data');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.contact) {
+        setContent(parsed.contact);
+      }
+    }
+  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -115,7 +128,7 @@ export const Contact = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Email Us</h4>
-                  <p className="text-lg md:text-xl font-bold text-primary">support@mvizindia.com</p>
+                  <p className="text-lg md:text-xl font-bold text-primary">{content.email}</p>
                   <p className="text-slate-500 text-xs md:text-sm mt-1">Response within 24 hours</p>
                 </div>
               </motion.div>
@@ -131,8 +144,8 @@ export const Contact = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us</h4>
-                  <p className="text-lg md:text-xl font-bold text-primary">+91 9960925523</p>
-                  <p className="text-slate-500 text-xs md:text-sm mt-1">Mon - Fri, 9am - 6pm IST</p>
+                  <p className="text-lg md:text-xl font-bold text-primary">{content.phone}</p>
+                  <p className="text-slate-500 text-xs md:text-sm mt-1">{content.hours}</p>
                 </div>
               </motion.div>
 
@@ -141,7 +154,7 @@ export const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="flex gap-3 md:gap-5 items-start group p-3 md:p-5 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
-                onClick={() => window.open('https://maps.app.goo.gl/vsgPwkT7itJ7ajaf7', '_blank')}
+                onClick={() => window.open(content.headquarters.mapsLink, '_blank')}
               >
                 <div className="w-10 h-10 md:w-14 md:h-14 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-lg">
                   <img src="https://cdn-icons-png.flaticon.com/128/11237/11237480.png" alt="Location" className="w-6 h-6 md:w-8 md:h-8" />
@@ -149,10 +162,10 @@ export const Contact = () => {
                 <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Visit Us</h4>
                   <p className="text-base md:text-lg font-bold text-primary leading-snug">
-                    A-1101, Mainland Valencia,<br />
-                    Kesnand Road, Vagholi
+                    {content.headquarters.line1},<br />
+                    {content.headquarters.line2}
                   </p>
-                  <p className="text-slate-500 text-xs md:text-sm mt-1">Pune, Maharashtra 412207</p>
+                  <p className="text-slate-500 text-xs md:text-sm mt-1">{content.headquarters.city}, {content.headquarters.state} {content.headquarters.pincode}</p>
                 </div>
               </motion.div>
             </div>
@@ -167,7 +180,7 @@ export const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 className="flex gap-4 items-start group p-4 rounded-2xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
-                onClick={() => window.open('https://maps.app.goo.gl/vsgPwkT7itJ7ajaf7', '_blank')}
+                onClick={() => window.open(content.headquarters.mapsLink, '_blank')}
               >
                 <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-md">
                   <img src="https://cdn-icons-png.flaticon.com/128/1790/1790211.png" alt="HQ" className="w-6 h-6" />
@@ -175,9 +188,9 @@ export const Contact = () => {
                 <div className="flex-1">
                   <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Headquarters</h4>
                   <p className="text-slate-700 text-sm font-medium leading-relaxed">
-                    A-1101, Mainland Valencia,<br />
-                    Kesnand Road, Vagholi,<br />
-                    Pune, Maharashtra 412207
+                    {content.headquarters.line1},<br />
+                    {content.headquarters.line2},<br />
+                    {content.headquarters.city}, {content.headquarters.state} {content.headquarters.pincode}
                   </p>
                 </div>
               </motion.div>
@@ -188,7 +201,7 @@ export const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 className="flex gap-4 items-start group p-4 rounded-2xl bg-gradient-to-r from-accent/5 to-accent/10 border border-accent/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
-                onClick={() => window.open('https://maps.app.goo.gl/19Q8qhuzek4G2ZSN8', '_blank')}
+                onClick={() => window.open(content.branch.mapsLink, '_blank')}
               >
                 <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-md">
                   <img src="https://cdn-icons-png.flaticon.com/128/1790/1790211.png" alt="Branch" className="w-6 h-6" />
@@ -196,9 +209,9 @@ export const Contact = () => {
                 <div className="flex-1">
                   <h4 className="text-sm font-bold text-accent uppercase tracking-wider mb-1">Branch Office</h4>
                   <p className="text-slate-700 text-sm font-medium leading-relaxed">
-                    Plot No 15, Diamond City,<br />
-                    Bandhgora, Pinda Joda,<br />
-                    Bokaro, Jharkhand 827013
+                    {content.branch.line1},<br />
+                    {content.branch.line2},<br />
+                    {content.branch.city}, {content.branch.state} {content.branch.pincode}
                   </p>
                 </div>
               </motion.div>
@@ -430,7 +443,7 @@ export const Contact = () => {
                   </div>
                   <div className="text-left">
                     <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">Headquarters</h3>
-                    <p className="text-white/80 text-sm font-medium">Pune, Maharashtra</p>
+                    <p className="text-white/80 text-sm font-medium">{content.headquarters.city}, {content.headquarters.state}</p>
                   </div>
                 </div>
               </div>
@@ -448,13 +461,13 @@ export const Contact = () => {
               </div>
               <div className="p-6 bg-slate-50">
                 <p className="text-slate-700 font-medium leading-relaxed">
-                  A-1101, Mainland Valencia,<br />
-                  Kesnand Road, Vagholi,<br />
-                  Pune, Haveli, Maharashtra,<br />
-                  India, 412207
+                  {content.headquarters.line1},<br />
+                  {content.headquarters.line2},<br />
+                  {content.headquarters.city}, {content.headquarters.state},<br />
+                  India, {content.headquarters.pincode}
                 </p>
                 <a 
-                  href="https://maps.app.goo.gl/vsgPwkT7itJ7ajaf7"
+                  href={content.headquarters.mapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary/90 transition-colors"
@@ -474,7 +487,7 @@ export const Contact = () => {
                   </div>
                   <div className="text-left">
                     <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">Branch Office</h3>
-                    <p className="text-white/80 text-sm font-medium">Bokaro, Jharkhand</p>
+                    <p className="text-white/80 text-sm font-medium">{content.branch.city}, {content.branch.state}</p>
                   </div>
                 </div>
               </div>
@@ -492,13 +505,13 @@ export const Contact = () => {
               </div>
               <div className="p-6 bg-slate-50">
                 <p className="text-slate-700 font-medium leading-relaxed">
-                  Plot No 15, Diamond City,<br />
-                  Bandhgora, Pinda Joda,<br />
-                  Bokaro, Jharkhand,<br />
-                  India, 827013
+                  {content.branch.line1},<br />
+                  {content.branch.line2},<br />
+                  {content.branch.city}, {content.branch.state},<br />
+                  India, {content.branch.pincode}
                 </p>
                 <a 
-                  href="https://maps.app.goo.gl/19Q8qhuzek4G2ZSN8"
+                  href={content.branch.mapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-full bg-accent text-white font-bold text-sm hover:bg-accent/90 transition-colors"
