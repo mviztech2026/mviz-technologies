@@ -19,6 +19,8 @@ export const Admin = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const [loginLoading, setLoginLoading] = useState(false);
+
   // Load current config on mount
   useEffect(() => {
     fetch('/.netlify/functions/config')
@@ -27,9 +29,31 @@ export const Admin = () => {
       .catch(() => setMessage('Could not load current settings'));
   }, []);
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-    setMessage('');
+  const handleLogin = async () => {
+    setLoginLoading(true);
+    // Test password by making a POST request with empty config
+    try {
+      const response = await fetch('/.netlify/functions/config', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${password}`
+        },
+        body: JSON.stringify(config)
+      });
+
+      if (response.ok) {
+        setIsAuthenticated(true);
+        setMessage('');
+      } else if (response.status === 401) {
+        setMessage('Invalid password');
+      } else {
+        setMessage('Error checking password');
+      }
+    } catch (error) {
+      setMessage('Error connecting to server');
+    }
+    setLoginLoading(false);
   };
 
   const handleSave = async () => {
@@ -84,9 +108,13 @@ export const Admin = () => {
           
           <button
             onClick={handleLogin}
-            className="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90"
+            disabled={loginLoading}
+            className="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 disabled:opacity-50 flex items-center justify-center gap-2"
           >
-            Login
+            {loginLoading ? (
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : null}
+            {loginLoading ? 'Checking...' : 'Login'}
           </button>
         </motion.div>
       </div>
