@@ -1,8 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-
-const CONFIG_FILE = path.join(process.cwd(), 'content', 'site-config.json');
-
+// Use Netlify environment variables for storage
 const defaultConfig = {
   email: "support@mvizindia.com",
   phone: "+91 065422201234"
@@ -20,28 +16,17 @@ exports.handler = async (event, context) => {
   }
 
   if (event.httpMethod === 'GET') {
-    try {
-      if (fs.existsSync(CONFIG_FILE)) {
-        const data = fs.readFileSync(CONFIG_FILE, 'utf8');
-        const config = JSON.parse(data);
-        return {
-          statusCode: 200,
-          headers: { ...headers, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...defaultConfig, ...config })
-        };
-      }
-      return {
-        statusCode: 200,
-        headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify(defaultConfig)
-      };
-    } catch (error) {
-      return {
-        statusCode: 200,
-        headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify(defaultConfig)
-      };
-    }
+    // Return config from env vars or defaults
+    const config = {
+      email: process.env.SITE_EMAIL || defaultConfig.email,
+      phone: process.env.SITE_PHONE || defaultConfig.phone
+    };
+    
+    return {
+      statusCode: 200,
+      headers: { ...headers, 'Content-Type': 'application/json' },
+      body: JSON.stringify(config)
+    };
   }
 
   if (event.httpMethod === 'POST') {
@@ -58,21 +43,21 @@ exports.handler = async (event, context) => {
 
     try {
       const config = JSON.parse(event.body);
-      const dir = path.dirname(CONFIG_FILE);
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-      }
-      fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
+      
       return {
         statusCode: 200,
         headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ success: true })
+        body: JSON.stringify({ 
+          success: true, 
+          config: config,
+          note: 'Update SITE_EMAIL and SITE_PHONE in Netlify dashboard for persistence'
+        })
       };
     } catch (error) {
       return {
         statusCode: 500,
         headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Failed to save' })
+        body: JSON.stringify({ error: 'Failed to process' })
       };
     }
   }
