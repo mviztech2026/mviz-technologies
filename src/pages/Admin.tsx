@@ -19,8 +19,6 @@ export const Admin = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const ADMIN_PASSWORD = 'mviz2024';
-
   // Load current config on mount
   useEffect(() => {
     fetch('/.netlify/functions/config')
@@ -30,12 +28,8 @@ export const Admin = () => {
   }, []);
 
   const handleLogin = () => {
-    if (password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      setMessage('');
-    } else {
-      setMessage('Invalid password');
-    }
+    setIsAuthenticated(true);
+    setMessage('');
   };
 
   const handleSave = async () => {
