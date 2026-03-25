@@ -1,4 +1,9 @@
-// Use Netlify environment variables for storage
+// Supabase client for Netlify function
+const { createClient } = require('@supabase/supabase-js');
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
+
 const defaultConfig = {
   email: "support@mvizindia.com",
   phone: "+91 065422201234"
@@ -15,17 +20,43 @@ exports.handler = async (event, context) => {
     return { statusCode: 200, headers, body: '' };
   }
 
-  if (event.httpMethod === 'GET') {
-    // Return config from env vars or defaults
-    const config = {
-      email: process.env.SITE_EMAIL || defaultConfig.email,
-      phone: process.env.SITE_PHONE || defaultConfig.phone
+  // If no Supabase config, return defaults
+  if (!supabaseUrl || !supabaseKey) {
+    if (event.httpMethod === 'GET') {
+      return {
+        statusCode: 200,
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify(defaultConfig)
+      };
+    }
+    return {
+      statusCode: 503,
+      headers: { ...headers, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Database not configured' })
     };
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  if (event.httpMethod === 'GET') {
+    const { data, error } = await supabase
+      .from('site_config')
+      .select('*')
+      .eq('id', 1)
+      .single();
     
+    if (error || !data) {
+      return {
+        statusCode: 200,
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify(defaultConfig)
+      };
+    }
+
     return {
       statusCode: 200,
       headers: { ...headers, 'Content-Type': 'application/json' },
-      body: JSON.stringify(config)
+      body: JSON.stringify({ email: data.email, phone: data.phone })
     };
   }
 
@@ -44,20 +75,27 @@ exports.handler = async (event, context) => {
     try {
       const config = JSON.parse(event.body);
       
+      const { error } = await supabase
+        .from('site_config')
+        .upsert({ 
+          id: 1, 
+          email: config.email, 
+          phone: config.phone,
+          updated_at: new Date().toISOString()
+        });
+
+      if (error) throw error;
+
       return {
         statusCode: 200,
         headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          success: true, 
-          config: config,
-          note: 'Update SITE_EMAIL and SITE_PHONE in Netlify dashboard for persistence'
-        })
+        body: JSON.stringify({ success: true, config })
       };
     } catch (error) {
       return {
         statusCode: 500,
         headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Failed to process' })
+        body: JSON.stringify({ error: 'Failed to save', details: error.message })
       };
     }
   }
