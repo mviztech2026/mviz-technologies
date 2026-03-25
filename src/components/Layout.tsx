@@ -2,6 +2,7 @@ import { ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronUp, Github, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useSiteConfig } from '../context/SiteContext';
 
 interface LayoutProps {
   children: ReactNode;
@@ -124,6 +125,7 @@ const Navbar = () => {
 };
 
 const Footer = () => {
+  const { email, phone } = useSiteConfig();
   return (
     <footer className="bg-gray-50 text-gray-600 py-12 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6">
@@ -170,11 +172,11 @@ const Footer = () => {
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2">
                   <Mail size={14} className="text-accent mt-1 shrink-0" />
-                  <span>support@mvizindia.com</span>
+                  <span>{email}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone size={14} className="text-accent mt-1 shrink-0" />
-                  <span>+91 065422201234</span>
+                  <span>{phone}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <MapPin size={14} className="text-accent mt-1 shrink-0" />

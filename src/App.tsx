@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SiteProvider } from './context/SiteContext';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -28,38 +29,39 @@ import { MaintenanceSupport } from './pages/services/MaintenanceSupport';
 
 export default function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/enterprise-products" element={<EnterpriseProducts />} />
-          <Route path="/services/system-integration" element={<SystemIntegration />} />
-          <Route path="/services/application-consultancy" element={<ApplicationConsultancy />} />
-          <Route path="/services/cloud-solutions" element={<CloudSolutions />} />
-          <Route path="/services/ai-iot-automation" element={<AiIoTAutomation />} />
-          <Route path="/services/devops-automation" element={<DevOpsAutomation />} />
-          <Route path="/services/data-analytics" element={<DataAnalytics />} />
-          <Route path="/services/managed-it-services" element={<ManagedItServices />} />
-          <Route path="/services/it-infrastructure-consulting" element={<ItInfrastructureConsulting />} />
-          <Route path="/services/cyber-security" element={<CyberSecurity />} />
-          <Route path="/services/elv-ibms" element={<ElvIbms />} />
-          <Route path="/services/oem-software" element={<OemSoftware />} />
-          <Route path="/services/pps" element={<Pps />} />
-          <Route path="/services/maintenance-support" element={<MaintenanceSupport />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/technologies" element={<Technologies />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/admin" element={<Admin />} />
-          {/* Fallback to Home */}
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <SiteProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/enterprise-products" element={<EnterpriseProducts />} />
+            <Route path="/services/system-integration" element={<SystemIntegration />} />
+            <Route path="/services/application-consultancy" element={<ApplicationConsultancy />} />
+            <Route path="/services/cloud-solutions" element={<CloudSolutions />} />
+            <Route path="/services/ai-iot-automation" element={<AiIoTAutomation />} />
+            <Route path="/services/devops-automation" element={<DevOpsAutomation />} />
+            <Route path="/services/data-analytics" element={<DataAnalytics />} />
+            <Route path="/services/managed-it-services" element={<ManagedItServices />} />
+            <Route path="/services/it-infrastructure-consulting" element={<ItInfrastructureConsulting />} />
+            <Route path="/services/cyber-security" element={<CyberSecurity />} />
+            <Route path="/services/elv-ibms" element={<ElvIbms />} />
+            <Route path="/services/oem-software" element={<OemSoftware />} />
+            <Route path="/services/pps" element={<Pps />} />
+            <Route path="/services/maintenance-support" element={<MaintenanceSupport />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/technologies" element={<Technologies />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </SiteProvider>
   );
 }

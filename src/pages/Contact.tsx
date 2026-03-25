@@ -1,6 +1,7 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, ChevronDown, Building2, User, Briefcase, CheckCircle } from 'lucide-react';
+import { useSiteConfig } from '../context/SiteContext';
 import contactData from '../../content/contact.json';
 
 const serviceOptions = [
@@ -42,6 +43,7 @@ const timelineOptions = [
 ];
 
 export const Contact = () => {
+  const { email, phone } = useSiteConfig();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -128,7 +130,7 @@ export const Contact = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Email Us</h4>
-                  <p className="text-lg md:text-xl font-bold text-primary">{content.email}</p>
+                  <p className="text-lg md:text-xl font-bold text-primary">{email}</p>
                   <p className="text-slate-500 text-xs md:text-sm mt-1">Response within 24 hours</p>
                 </div>
               </motion.div>
@@ -144,7 +146,7 @@ export const Contact = () => {
                 </div>
                 <div className="text-left">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us</h4>
-                  <p className="text-lg md:text-xl font-bold text-primary">{content.phone}</p>
+                  <p className="text-lg md:text-xl font-bold text-primary">{phone}</p>
                   <p className="text-slate-500 text-xs md:text-sm mt-1">{content.hours}</p>
                 </div>
               </motion.div>

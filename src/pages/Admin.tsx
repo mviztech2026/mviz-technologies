@@ -1,33 +1,32 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Save, Lock, Mail, Phone } from 'lucide-react';
+import { Save, Lock, Mail, Phone, CheckCircle } from 'lucide-react';
 
-interface SiteData {
-  footerEmail: string;
-  footerPhone: string;
-  contactEmail: string;
+interface Config {
+  email: string;
+  phone: string;
 }
 
-const defaultData: SiteData = {
-  footerEmail: "support@mvizindia.com",
-  footerPhone: "+91 065422201234",
-  contactEmail: "support@mvizindia.com"
+const defaultConfig: Config = {
+  email: "support@mvizindia.com",
+  phone: "+91 065422201234"
 };
 
 export const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
-  const [data, setData] = useState<SiteData>(defaultData);
+  const [config, setConfig] = useState<Config>(defaultConfig);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   const ADMIN_PASSWORD = 'mviz2024';
 
+  // Load current config on mount
   useEffect(() => {
-    const saved = localStorage.getItem('mviz_site_data');
-    if (saved) {
-      setData({ ...defaultData, ...JSON.parse(saved) });
-    }
+    fetch('/api/config')
+      .then(res => res.json())
+      .then(data => setConfig({ ...defaultConfig, ...data }))
+      .catch(() => setMessage('Could not load current settings'));
   }, []);
 
   const handleLogin = () => {
@@ -39,22 +38,28 @@ export const Admin = () => {
     }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     setLoading(true);
-    localStorage.setItem('mviz_site_data', JSON.stringify(data));
-    setLoading(false);
-    setMessage('Changes saved! Export JSON and send to developer for deployment.');
-    setTimeout(() => setMessage(''), 5000);
-  };
+    try {
+      const response = await fetch('/api/config', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${ADMIN_PASSWORD}`
+        },
+        body: JSON.stringify(config)
+      });
 
-  const handleExport = () => {
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'site-content.json';
-    a.click();
-    URL.revokeObjectURL(url);
+      if (response.ok) {
+        setMessage('✅ Saved! All pages updated automatically.');
+      } else {
+        setMessage('❌ Failed to save. Try again.');
+      }
+    } catch (error) {
+      setMessage('❌ Error saving. Check connection.');
+    }
+    setLoading(false);
+    setTimeout(() => setMessage(''), 5000);
   };
 
   if (!isAuthenticated) {
@@ -100,78 +105,76 @@ export const Admin = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-lg p-6"
+          className="bg-white rounded-2xl shadow-lg p-8"
         >
-          <h1 className="text-xl font-black text-primary mb-6">Edit Contact Info</h1>
+          <h1 className="text-2xl font-black text-primary mb-2">Edit Contact Info</h1>
+          <p className="text-slate-500 mb-6">Changes appear automatically across the entire site</p>
           
-          {/* Footer Email */}
+          {/* Email */}
           <div className="mb-4">
             <label className="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              Footer Email
+              Email Address
             </label>
             <input
               type="email"
-              value={data.footerEmail}
-              onChange={(e) => setData({ ...data, footerEmail: e.target.value })}
+              value={config.email}
+              onChange={(e) => setConfig({ ...config, email: e.target.value })}
               className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-primary outline-none"
             />
+            <p className="text-xs text-slate-400 mt-1">Used in: Contact page, Footer, all email links</p>
           </div>
 
-          {/* Footer Phone */}
-          <div className="mb-4">
+          {/* Phone */}
+          <div className="mb-6">
             <label className="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              Footer Phone
+              Phone Number
             </label>
             <input
               type="text"
-              value={data.footerPhone}
-              onChange={(e) => setData({ ...data, footerPhone: e.target.value })}
+              value={config.phone}
+              onChange={(e) => setConfig({ ...config, phone: e.target.value })}
               className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-primary outline-none"
             />
-          </div>
-
-          {/* Contact Page Email */}
-          <div className="mb-6">
-            <label className="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              Contact Page Email
-            </label>
-            <input
-              type="email"
-              value={data.contactEmail}
-              onChange={(e) => setData({ ...data, contactEmail: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-primary outline-none"
-            />
+            <p className="text-xs text-slate-400 mt-1">Used in: Contact page, Footer, all phone links</p>
           </div>
 
           {message && (
-            <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700"
+            >
               {message}
-            </div>
+            </motion.div>
           )}
 
-          <div className="flex gap-3">
-            <button
-              onClick={handleSave}
-              disabled={loading}
-              className="flex-1 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 disabled:opacity-50 flex items-center justify-center gap-2"
-            >
-              <Save className="w-4 h-4" />
-              {loading ? 'Saving...' : 'Save Changes'}
-            </button>
-            <button
-              onClick={handleExport}
-              className="px-4 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200"
-            >
-              Export JSON
-            </button>
-          </div>
+          <button
+            onClick={handleSave}
+            disabled={loading}
+            className="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 disabled:opacity-50 flex items-center justify-center gap-2 text-lg"
+          >
+            {loading ? (
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <Save className="w-5 h-5" />
+            )}
+            {loading ? 'Saving...' : 'Save Changes'}
+          </button>
 
-          <p className="mt-4 text-xs text-slate-500">
-            After saving, click "Export JSON" and send the file to your developer to update the live website.
-          </p>
+          <div className="mt-6 p-4 bg-blue-50 rounded-xl">
+            <h3 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
+              <CheckCircle className="w-4 h-4" />
+              What gets updated?
+            </h3>
+            <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
+              <li>Contact page email & phone</li>
+              <li>Footer contact info</li>
+              <li>All "mailto" and "tel" links site-wide</li>
+              <li>Instant update - no redeploy needed!</li>
+            </ul>
+          </div>
         </motion.div>
       </div>
     </div>
