@@ -45,7 +45,7 @@ export const Admin = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${ADMIN_PASSWORD}`
+          'Authorization': `Bearer ${password}`
         },
         body: JSON.stringify(config)
       });
